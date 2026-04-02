@@ -8,29 +8,70 @@ layout: null
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reports | Instead Of War</title>
   <style>
-    body { background: #000; color: #fff; font-family: 'Inter', sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&display=swap');
+    body { background: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
     .wrap { max-width: 800px; margin: 50px auto; padding: 20px; }
-    h1 { color: #ff3333; text-transform: uppercase; font-weight: 900; font-size: 3rem; }
+    .header-bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f1f1f; padding-bottom: 20px; margin-bottom: 40px; }
+    .back { color: #666; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; text-transform: uppercase; }
+    .back:hover { color: #fff; }
+    select { background: #0a0a0a; color: #fff; border: 1px solid #1f1f1f; padding: 10px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; cursor: pointer; outline: none; }
+    h1 { color: #ff3333; text-transform: uppercase; font-weight: 900; font-size: 3rem; margin-top: 0; line-height: 1; }
     .post-list { list-style: none; padding: 0; }
     .post-list li { border-bottom: 1px solid #1f1f1f; padding: 20px 0; }
     .post-link { color: #fff; text-decoration: none; font-size: 1.5rem; font-weight: bold; }
     .post-link:hover { color: #00e676; }
-    .post-date { color: #666; font-family: monospace; display: block; margin-top: 5px; }
-    .back { color: #666; text-decoration: none; font-family: monospace; display: inline-block; margin-bottom: 20px; }
+    .post-date { color: #666; font-family: 'JetBrains Mono', monospace; display: block; margin-top: 5px; font-size: 0.9rem; }
+    .hidden { display: none !important; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <a href="/" class="back">← BACK TO HOME</a>
-    <h1>Instead of War - Reports</h1>
-    <ul class="post-list">
+    <div class="header-bar">
+      <a href="/" class="back">← BACK TO LIVE DATA</a>
+      <select id="blogLangSelect">
+        <option value="en">🇺🇸 ENGLISH</option>
+        <option value="es">🇪🇸 ESPAÑOL</option>
+        <option value="it">🇮🇹 ITALIANO</option>
+        <option value="fr">🇫🇷 FRANÇAIS</option>
+        <option value="de">🇩🇪 DEUTSCH</option>
+        <option value="pt">🇵🇹 PORTUGUÊS</option>
+      </select>
+    </div>
+
+    <h1>Intelligence Reports</h1>
+    
+    <ul class="post-list" id="postList">
       {% for post in site.posts %}
-        <li>
+        <li class="post-item" data-lang="{{ post.lang | default: 'en' }}">
           <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
           <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
         </li>
       {% endfor %}
     </ul>
   </div>
+
+  <script>
+    const langSelect = document.getElementById('blogLangSelect');
+    const posts = document.querySelectorAll('.post-item');
+
+    // Función para ocultar/mostrar posts según idioma
+    function filterPosts(lang) {
+      posts.forEach(post => {
+        if (post.getAttribute('data-lang') === lang) {
+          post.classList.remove('hidden');
+        } else {
+          post.classList.add('hidden');
+        }
+      });
+    }
+
+    // Al cambiar el selector, filtramos
+    langSelect.addEventListener('change', (e) => {
+      filterPosts(e.target.value);
+    });
+
+    // Filtramos en inglés por defecto al cargar la página
+    filterPosts('en');
+  </script>
 </body>
 </html>
