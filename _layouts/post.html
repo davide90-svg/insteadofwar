@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Instead Of War</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&display=swap');
+    :root { --bg: #000; --red: #ff3333; --white: #fff; --muted: #666; --border: #1f1f1f; }
+    body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.8; margin: 0; padding: 0; }
+    .wrap { max-width: 800px; margin: 0 auto; padding: 40px 20px 80px; }
+    header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 40px; margin-top: 20px; }
+    .home-link { color: var(--muted); text-decoration: none; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; font-size: 0.9rem; }
+    .home-link:hover { color: var(--white); }
+    h1 { color: var(--red); font-weight: 900; font-size: 2.5rem; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 10px; }
+    .date { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+    .content h2 { color: var(--white); margin-top: 40px; }
+    .content p { color: #ccc; text-align: justify; font-size: 1.1rem; }
+    .content a { color: var(--red); text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="/" class="home-link">← BACK TO LIVE DATA</a>
+    </header>
+    <article>
+      <h1>{{ page.title }}</h1>
+      <p class="date">{{ page.date | date: "%B %d, %Y" }}</p>
+      <div class="content">
+        {{ content }}
+      </div>
+    </article>
+  </div>
+</body>
+</html>
