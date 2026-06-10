@@ -16,6 +16,7 @@
 <meta property="og:image" content="https://insteadofwar.today/imagen-preview.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Instead Of War | Real-Time Impact" />
+
 <meta name="twitter:description" content="Every dollar spent on war is an unused opportunity to build." />
 <script type="application/ld+json">
 {
@@ -136,8 +137,8 @@ footer { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1p
 
   <header>
     <nav class="top-nav">
-      <a href="/reports.html" class="nav-btn primary" id="t-nav-rep">📰 REPORTS</a>
-      <a href="/about.html" class="nav-btn" id="t-nav-abo">📖 ABOUT</a>
+      <a href="./reports.html" class="nav-btn primary" id="t-nav-rep">📰 REPORTS</a>
+      <a href="./about.html" class="nav-btn" id="t-nav-abo">📖 ABOUT</a>
       <a href="#get-involved" class="nav-btn" id="t-nav-get">🤝 GET INVOLVED</a>
     </nav>
     <select id="langSelect" aria-label="Select language">
@@ -270,7 +271,7 @@ const COST_HUNGER_DAY = 93000000000 / 365;
 const COST_CLIMATE_DAY = 100000000000 / 365;
 
 let currentMode = 'total';
-let currentLang = 'en';
+let currentLang = (() => { try { return localStorage.getItem('lang') || 'en'; } catch (e) { return 'en'; } })();
 
 const i18n = {
   en: {
@@ -407,9 +408,15 @@ const i18n = {
   }
 };
 
+function persistLang() {
+  try { localStorage.setItem('lang', currentLang); } catch (e) {}
+}
+
 function updateTexts() {
   const t = i18n[currentLang] || i18n.en;
   document.documentElement.lang = currentLang;
+  const langSelect = document.getElementById('langSelect');
+  if (langSelect) langSelect.value = currentLang;
   document.getElementById('t-nav-rep').innerText = t.navRep;
   document.getElementById('t-nav-abo').innerText = t.navAbo;
   document.getElementById('t-nav-get').innerText = t.navGet;
@@ -484,6 +491,7 @@ function updateCounters() {
 
 document.getElementById('langSelect').addEventListener('change', (e) => {
   currentLang = e.target.value;
+  persistLang();
   updateTexts();
 });
 
