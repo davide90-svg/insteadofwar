@@ -40,14 +40,6 @@
   gtag('config', 'G-P02H66CHT4');
 </script>
 
-<script type="text/javascript">
-  var _iub = _iub || [];
-  _iub.csConfiguration = {"siteId":4481959,"cookiePolicyId":63391185,"lang":"en","storage":{"useSiteId":true}};
-</script>
-<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4481959.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&display=swap');
 
@@ -62,16 +54,30 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
 .wrap { max-width: 1200px; margin: 0 auto; padding: 40px 20px 80px; }
-header { display: flex; justify-content: flex-end; margin-bottom: 40px; }
+
+/* Navegación Superior */
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; margin-top: 20px; flex-wrap: wrap; gap: 20px; }
+.top-nav { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+.nav-btn {
+  background: var(--surface); color: var(--white); border: 1px solid var(--border);
+  font-weight: 700; text-decoration: none; padding: 10px 20px; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; font-size: 0.85rem;
+}
+.nav-btn:hover { border-color: var(--white); }
+.nav-btn.primary {
+  background: var(--red); color: #000; border: none; font-weight: 900;
+  box-shadow: 0 0 15px rgba(255,51,51,0.3); font-size: 0.95rem;
+}
+.nav-btn.primary:hover { background: #ff4d4d; box-shadow: 0 0 25px rgba(255,51,51,0.6); }
 
 select {
   background: var(--surface); color: var(--white);
   border: 1px solid var(--border);
   padding: 10px 15px; border-radius: 4px; font-family: 'JetBrains Mono', monospace;
-  cursor: pointer; font-size: 1rem; outline: none;
-  transition: border 0.3s;
+  cursor: pointer; font-size: 0.9rem; outline: none; transition: border 0.3s;
 }
 select:hover { border-color: var(--muted); }
 
@@ -85,17 +91,14 @@ select:hover { border-color: var(--muted); }
 
 .time-toggles { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
 .toggle-btn {
-  background: transparent; color: var(--muted);
-  border: 1px solid var(--border);
+  background: transparent; color: var(--muted); border: 1px solid var(--border);
   padding: 8px 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
-  cursor: pointer; transition: all 0.2s; border-radius: 2px;
-  text-transform: uppercase;
+  cursor: pointer; transition: all 0.2s; border-radius: 2px; text-transform: uppercase;
 }
 .toggle-btn.active { background: var(--white); color: var(--bg); font-weight: bold; }
 
 .mechanical-box {
-  background: #050505; padding: 15px 20px; border-radius: 4px;
-  border: 1px solid #222;
+  background: #050505; padding: 15px 20px; border-radius: 4px; border: 1px solid #222;
   box-shadow: inset 0 0 25px rgba(0,0,0,0.9); font-family: 'JetBrains Mono', monospace;
   display: inline-block; width: 100%; text-align: center;
 }
@@ -118,17 +121,13 @@ p.text-body a { color: var(--white); text-decoration: underline; text-underline-
 footer { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
 .action-container { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; margin-top: 20px; }
 .btn-action {
-  background: var(--white); color: var(--bg); border: none;
-  padding: 12px 24px;
+  background: var(--white); color: var(--bg); border: none; padding: 12px 24px;
   font-weight: bold; cursor: pointer; border-radius: 2px; text-transform: uppercase; font-family: 'Inter', sans-serif;
 }
 .btn-action:hover { background: #ddd; }
 .legal-text { font-size: 0.75rem; color: #555; max-width: 900px; margin: 30px auto 0; text-align: justify; line-height: 1.5; }
-.contact-section { margin-top: 20px; font-size: 0.75rem; color: #444; font-family: 'JetBrains Mono', monospace; }
-.contact-section a { color: #666; text-decoration: none; }
-.contact-section a:hover { color: var(--white); }
 
-.get-involved { margin-top: 80px; padding-top: 60px; border-top: 1px solid var(--border); }
+.get-involved { margin-top: 80px; padding-top: 60px; border-top: 1px solid var(--border); scroll-margin-top: 40px; }
 .get-involved-title { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--white); text-align: center; margin-bottom: 12px; }
 .get-involved-subtitle { text-align: center; color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 50px; }
 .involve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; }
@@ -141,15 +140,22 @@ footer { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1p
 .involve-card-cta:hover { background: var(--white); color: var(--bg); border-color: var(--white); }
 .involve-card-cta.red { border-color: var(--red); color: var(--red); }
 .involve-card-cta.red:hover { background: var(--red); color: var(--bg); }
+
+/* Newsletter Section */
+.newsletter-box { background: var(--surface); border: 1px solid var(--border); padding: 30px; margin-top: 40px; text-align: center; border-radius: 4px; }
+.newsletter-box h4 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.newsletter-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
 </style>
 </head>
 <body>
 <main class="wrap">
 
-  <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; margin-top: 20px; flex-wrap: wrap; gap: 20px;">
-    <a href="/reports.html" style="background: var(--red); color: #000; font-weight: 900; text-decoration: none; font-family: 'Inter', sans-serif; padding: 15px 30px; font-size: 1.2rem; border-radius: 4px; text-transform: uppercase; box-shadow: 0 0 20px rgba(255,51,51,0.4); letter-spacing: 1px; transition: all 0.3s;">
-      📰 REPORTS
-    </a>
+  <header>
+    <nav class="top-nav">
+      <a href="/reports.html" class="nav-btn primary" id="t-nav-rep">📰 REPORTS</a>
+      <a href="/about.html" class="nav-btn" id="t-nav-abo">📖 ABOUT</a>
+      <a href="#get-involved" class="nav-btn" id="t-nav-get">🤝 GET INVOLVED</a>
+    </nav>
     <select id="langSelect" aria-label="Select language">
       <option value="en">🇺🇸 ENGLISH</option>
       <option value="es">🇪🇸 ESPAÑOL</option>
@@ -213,7 +219,7 @@ footer { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1p
     <h2 class="phrase-white" id="t-not-building">THIS IS WHAT WE ARE NOT BUILDING</h2>
   </section>
 
-  <section class="get-involved" aria-label="Get Involved">
+  <section id="get-involved" class="get-involved" aria-label="Get Involved">
     <h2 class="get-involved-title" id="t-gi-title">GET INVOLVED</h2>
     <p class="get-involved-subtitle" id="t-gi-subtitle">THIS PROJECT IS LOOKING FOR ALLIES</p>
     <div class="involve-grid">
@@ -256,12 +262,15 @@ footer { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1p
     </div>
   </section>
 
+  <div class="newsletter-box">
+    <h4 id="t-nl-tit">STAY UPDATED</h4>
+    <p id="t-nl-sub">Join our newsletter to receive data updates and news about the project.</p>
+    <iframe src="https://insteadofwar.substack.com/embed" width="100%" height="150" style="border:1px solid #1f1f1f; background:var(--surface); max-width: 600px; margin: 0 auto; display: block;" frameborder="0" scrolling="no"></iframe>
+  </div>
+
   <footer>
     <p style="color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">CREATED BY DAVIDE PARISI — 2026</p>
     <p class="legal-text" id="t-legal">LEGAL NOTICE & LIMITATION OF LIABILITY...</p>
-    <div class="contact-section">
-      CONTACT: <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a>
-    </div>
   </footer>
 
 </main> 
@@ -282,6 +291,8 @@ let currentLang = 'en';
 
 const i18n = {
   en: {
+    navRep: '📰 REPORTS', navAbo: '📖 ABOUT', navGet: '🤝 GET INVOLVED',
+    nlTit: 'STAY UPDATED', nlSub: 'Join our newsletter to receive data updates and news about the project.',
     sub: 'REAL-TIME COMBINED MILITARY SPENDING — TOP 10 GLOBAL SPENDERS (SIPRI 2024)',
     hap: 'THIS IS HAPPENING NOW', not: 'THIS IS WHAT WE ARE NOT BUILDING', fun: 'INSTEAD, THIS MONEY COULD FUND:',
     bSec: 'PER SECOND', bMin: 'PER MINUTE', bTot: 'TOTAL ACCUMULATED',
@@ -303,6 +314,8 @@ const i18n = {
     leg: 'LEGAL NOTICE & LIMITATION OF LIABILITY: This project operates exclusively as an educational and data-visualization tool. The figures presented are real-time mathematical projections derived from publicly available annual reports (SIPRI, World Bank, WFP, WHO, UNESCO) and averaged into continuous per-second increments. They represent illustrative "opportunity costs" and do not constitute exact accounting audits or direct financial diversions. The creator is not affiliated with the cited organizations, and their respective trademarks belong to their owners. This site does not provide financial, political, or legal advice. By accessing this site, you acknowledge that the data is for awareness purposes only. Unauthorized commercial reproduction of this code or interface is strictly prohibited. The creator assumes no liability for interpretations, decisions, or actions taken by users based on the extrapolated data.'
   },
   es: {
+    navRep: '📰 INFORMES', navAbo: '📖 SOBRE NOSOTROS', navGet: '🤝 PARTICIPA',
+    nlTit: 'MANTENTE INFORMADO', nlSub: 'Únete a nuestra newsletter para recibir actualizaciones de datos y noticias.',
     sub: 'GASTO MILITAR COMBINADO EN TIEMPO REAL — TOP 10 PAÍSES (SIPRI 2024)',
     hap: 'ESTO ESTÁ SUCEDIENDO AHORA', not: 'ESTO ES LO QUE NO ESTAMOS CONSTRUYENDO', fun: 'EN SU LUGAR, ESTE DINERO PODRÍA FINANCIAR:',
     bSec: 'POR SEGUNDO', bMin: 'POR MINUTO', bTot: 'TOTAL ACUMULADO',
@@ -324,13 +337,15 @@ const i18n = {
     leg: 'AVISO LEGAL Y LIMITACIÓN DE RESPONSABILIDAD: Este proyecto opera exclusivamente como una herramienta educativa y de visualización de datos. Las cifras presentadas son proyecciones matemáticas en tiempo real extrapoladas de informes anuales públicos (SIPRI, Banco Mundial, PMA, OMS, UNESCO). Representan "costes de oportunidad" ilustrativos y no constituyen auditorías contables exactas. El creador no está afiliado a las organizaciones citadas. Este sitio no proporciona asesoramiento financiero, político o legal. Queda estrictamente prohibida la reproducción comercial no autorizada.'
   },
   it: {
+    navRep: '📰 REPORT', navAbo: '📖 CHI SIAMO', navGet: '🤝 PARTECIPA',
+    nlTit: 'RIMANI AGGIORNATO', nlSub: 'Iscriviti per ricevere aggiornamenti sui dati e novità sul progetto.',
     sub: 'SPESA MILITARE COMBINATA IN TEMPO REALE — TOP 10 PAESI (SIPRI 2024)',
     hap: 'QUESTO STA ACCADENDO ORA', not: 'QUESTO È CIÒ CHE NON STIAMO COSTRUENDO', fun: 'INVECE, QUESTO DENARO POTREBBE FINANZIARE:',
     bSec: 'AL SECONDO', bMin: 'AL MINUTO', bTot: 'TOTALE ACCUMULATO',
     pers1: 'LA TUA SESSIONE: ', pers2: ' SPESI DA QUANDO SEI ENTRATO NEL SITO',
-    lHou: 'CASE FAMILIARI DI BASE COSTRUITE', lFoo: 'PERSONE NUTRITE (SOSTENTAMENTO DI 10 ANNI)', lHos: 'OSPEDALI AD ALTA CAPACITÀ ATTREZZATI', lEdu: 'BAMBINI SCOLARIZZATI (CICLO DI 10 ANNI)', lHun: 'GIORNI FINANZIATI PER SRADICARE LA FAME NEL MONDO', lCli: 'GIORNI PAGATI PER L\'ADATTAMENTO CLIMATICO GLOBALE',
+    lHou: 'CASE FAMILIARI DI BASE COSTRUITE', lFoo: 'PERSONE NUTRITE (SOSTENTAMENTO DI 10 ANNI)', lHos: 'OSPEDALI AD ALTA CAPACITÀ ATTREZZATI', lEdu: 'BAMBINI SCOLARIZZATI (CICLO DI 10 ANNI)', lHun: 'GIORNI FINANZIATI PER SRADICARE LA FAME NEL MONDO', lCli: 'GIORNI PAGATI PER L\'ADAPTAMENTO CLIMATICO GLOBALE',
     mTit: 'METODOLOGIA E FONTI UFFICIALI',
-    mBod: 'I dati sono estrapolati dai rapporti annuali del SIPRI. La spesa militare combinata dei 10 maggiori paesi (USA, Cina, Russia, Germania, India, Regno Unito, Arabia Saudita, Ucraina, Francia e Giappone) ammonta a ~$1.981 Trilioni/anno secondo il <a href="https://www.sipri.org/databases/milex" target="_blank">Database SIPRI 2024</a>. Questo equivale a <strong>$62.820,08 al secondo</strong>.<br><br>Le equivalenze sociali sono calcolate con i costi medi internazionali di <a href="https://data.worldbank.org/" target="_blank">Banca Mondiale</a> (Alloggi), <a href="https://www.wfp.org/" target="_blank">WFP</a> (Alimentazione), <a href="https://www.who.int/" target="_blank">OMS</a> (Ospedali) e <a href="https://www.unesco.org/en/education" target="_blank">UNESCO</a> (Istruzione).',
+    mBod: 'I dati sono estrapolati dai rapporti annuali del SIPRI. La spesa militare combinata dei 10 maggiori paesi ammonta a ~$1.981 Trilioni/anno secondo il <a href="https://www.sipri.org/databases/milex" target="_blank">Database SIPRI 2024</a>. Questo equivale a <strong>$62.820,08 al secondo</strong>.<br><br>Le equivalenze sociali sono calcolate con i costi medi internazionali di <a href="https://data.worldbank.org/" target="_blank">Banca Mondiale</a>, <a href="https://www.wfp.org/" target="_blank">WFP</a>, <a href="https://www.who.int/" target="_blank">OMS</a> e <a href="https://www.unesco.org/en/education" target="_blank">UNESCO</a>.',
     sTit: 'CONDIVIDI LA REALTÀ', sBod: 'Questo è uno strumento informativo. Condividendolo, esponi il vero costo opportunità della guerra.', bSha: 'CONDIVIDI I DATI',
     giTitle: 'PARTECIPA', giSubtitle: 'QUESTO PROGETTO CERCA ALLEATI',
     giTag1: 'ORGANIZZAZIONI E ISTITUZIONI', giCardTitle1: 'COLLABORA',
@@ -342,9 +357,11 @@ const i18n = {
     giTag3: 'INDIVIDUALE E ISTITUZIONALE', giCardTitle3: 'SOSTIENI IL PROGETTO',
     giBody3: 'Instead of War non ha finanziamenti istituzionali né pubblicità. Esiste perché una persona ha creduto che dovesse esistere. Se anche tu lo credi, il tuo supporto lo mantiene indipendente, in crescita e libero.',
     giCta3: '→ SOSTIENICI',
-    leg: 'NOTA LEGALE E LIMITAZIONE DI RESPONSABILITÀ: Questo progetto opera esclusivamente come strumento educativo e di visualizzazione dati. Le cifre presentate sono proiezioni matematiche in tempo reale estrapolate da rapporti annuali pubblici (SIPRI, Banca Mondiale, WFP, OMS, UNESCO). Rappresentano "costi opportunità" illustrativi e non costituiscono esatte revisioni contabili. Il creatore non è affiliato alle organizzazioni citate. È severamente vietata la riproduzione commerciale non autorizzata.'
+    leg: 'NOTA LEGALE E LIMITAZIONE DI RESPONSABILITÀ: Questo progetto opera esclusivamente come strumento educativo e di visualizzazione dati. È severamente vietata la riproduzione commerciale non autorizzata.'
   },
   fr: {
+    navRep: '📰 RAPPORTS', navAbo: '📖 À PROPOS', navGet: '🤝 PARTICIPER',
+    nlTit: 'RESTEZ INFORMÉ', nlSub: 'Inscrivez-vous pour recevoir les mises à jour et les actualités du projet.',
     sub: 'DÉPENSES MILITAIRES COMBINÉES EN TEMPS RÉEL — TOP 10 MONDIAL (SIPRI 2024)',
     hap: 'CELA SE PASSE MAINTENANT', not: 'C\'EST CE QUE NOUS NE CONSTRUISONS PAS', fun: 'AU LIEU DE CELA, CET ARGENT POURRAIT FINANCER :',
     bSec: 'PAR SECONDE', bMin: 'PAR MINUTE', bTot: 'TOTAL CUMULÉ',
@@ -355,17 +372,19 @@ const i18n = {
     sTit: 'PARTAGEZ LA RÉALITÉ', sBod: 'Ceci est un outil d\'information. Partagez pour exposer le vrai coût de la guerre.', bSha: 'PARTAGER LES DONNÉES',
     giTitle: 'PARTICIPER', giSubtitle: 'CE PROJET CHERCHE DES ALLIÉS',
     giTag1: 'ORGANISATIONS ET INSTITUTIONS', giCardTitle1: 'COLLABORER',
-    giBody1: 'Instead of War cherche des partenaires qui partagent la conviction que les données peuvent changer les récits — et les récits peuvent changer les politiques. Si votre organisation travaille pour la paix, les droits humains, le développement ou la justice climatique, parlons de ce que nous pouvons construire ensemble.',
+    giBody1: 'Instead of War cherche des partenaires qui partagent la conviction que les données peuvent changer les récits. Si votre organisation travaille pour la paix ou les droits humains, parlons de ce que nous pouvons construire.',
     giCta1: '→ ÉCRIVEZ-NOUS',
     giTag2: 'PRESSE ET MÉDIAS', giCardTitle2: 'AMPLIFIER',
-    giBody2: 'Ces données sont libres d\'utilisation. Si vous travaillez sur un article concernant les dépenses militaires, le coût d\'opportunité ou l\'économie des conflits, nous pouvons vous fournir du contexte, la méthodologie et une interview directe avec le fondateur.',
+    giBody2: 'Ces données sont libres d\'utilisation. Si vous travaillez sur un article, nous pouvons vous fournir du contexte, la méthodologie et une interview avec le fondateur.',
     giCta2: '→ CONTACT PRESSE',
     giTag3: 'INDIVIDUEL ET INSTITUTIONNEL', giCardTitle3: 'SOUTENIR LE PROJET',
-    giBody3: 'Instead of War n\'a pas de financement institutionnel ni de publicité. Il existe parce qu\'une personne a cru qu\'il devrait exister. Si vous le croyez aussi, votre soutien le maintient indépendant, en croissance et libre.',
+    giBody3: 'Instead of War n\'a pas de financement institutionnel. Votre soutien le maintient indépendant et libre.',
     giCta3: '→ NOUS SOUTENIR',
-    leg: 'AVIS LÉGAL ET LIMITATION DE RESPONSABILITÉ : Ce projet fonctionne exclusivement comme un outil éducatif et de visualisation de données. Les chiffres présentés sont des projections mathématiques extrapolées à partir de rapports annuels publics (SIPRI, Banque mondiale, PAM, OMS, UNESCO). La reproduction commerciale non autorisée est strictement interdite.'
+    leg: 'AVIS LÉGAL ET LIMITATION DE RESPONSABILITÉ : Ce projet fonctionne exclusivement comme un outil éducatif. La reproduction commerciale non autorisée est strictement interdite.'
   },
   de: {
+    navRep: '📰 BERICHTE', navAbo: '📖 ÜBER UNS', navGet: '🤝 MITMACHEN',
+    nlTit: 'BLEIBEN SIE INFORMIERT', nlSub: 'Melden Sie sich an, um Datenaktualisierungen und Neuigkeiten zu erhalten.',
     sub: 'KOMBINIERTE MILITÄRAUSGABEN IN ECHTZEIT — TOP 10 WELTWEIT (SIPRI 2024)',
     hap: 'DAS PASSIERT GERADE JETZT', not: 'DAS IST ES, WAS WIR NICHT BAUEN', fun: 'STATTDESSEN KÖNNTE DIESES GELD FINANZIEREN:',
     bSec: 'PRO SEKUNDE', bMin: 'PRO MINUTE', bTot: 'GESAMT',
@@ -376,17 +395,19 @@ const i18n = {
     sTit: 'TEILEN SIE DIE REALITÄT', sBod: 'Informationswerkzeug. Teilen Sie es, um die wahren Kosten des Krieges aufzuzeigen.', bSha: 'DATEN TEILEN',
     giTitle: 'MITMACHEN', giSubtitle: 'DIESES PROJEKT SUCHT VERBÜNDETE',
     giTag1: 'ORGANISATIONEN & INSTITUTIONEN', giCardTitle1: 'ZUSAMMENARBEITEN',
-    giBody1: 'Instead of War sucht Partner, die die Überzeugung teilen, dass Daten Narrative verändern können — und Narrative die Politik. Wenn Ihre Organisation für Frieden, Menschenrechte, Entwicklung oder Klimagerechtigkeit arbeitet, sprechen wir darüber, was wir gemeinsam aufbauen können.',
+    giBody1: 'Instead of War sucht Partner, die die Überzeugung teilen, dass Daten Narrative verändern können. Sprechen wir darüber, was wir gemeinsam aufbauen können.',
     giCta1: '→ SCHREIB UNS',
     giTag2: 'PRESSE & MEDIEN', giCardTitle2: 'VERSTÄRKEN',
-    giBody2: 'Diese Daten sind frei verwendbar. Wenn Sie an einem Artikel über Militärausgaben, Opportunitätskosten oder die Ökonomie von Konflikten arbeiten, können wir Kontext, Methodik und ein direktes Interview mit dem Gründer anbieten.',
+    giBody2: 'Diese Daten sind frei verwendbar. Wir bieten Kontext, Methodik und ein direktes Interview mit dem Gründer an.',
     giCta2: '→ PRESSEKONTAKT',
-    giTag3: 'INDIVIDUELL & INSTITUTIONELL', giCardTitle3: 'DAS PROJEKT UNTERSTÜTZEN',
-    giBody3: 'Instead of War hat keine institutionelle Finanzierung und keine Werbung. Es existiert, weil eine Person glaubte, dass es existieren sollte. Wenn Sie das auch glauben, hält Ihre Unterstützung es unabhängig, wachsend und frei.',
+    giTag3: 'INDIVIDUELL & INSTITUTIONELL', giCardTitle3: 'PROJEKT UNTERSTÜTZEN',
+    giBody3: 'Instead of War hat keine institutionelle Finanzierung. Ihre Unterstützung hält es unabhängig und frei.',
     giCta3: '→ UNS UNTERSTÜTZEN',
-    leg: 'RECHTLICHER HINWEIS & HAFTUNGSBESCHRÄNKUNG: Dieses Projekt fungiert ausschließlich als Bildungs- und Datenvisualisierungstool. Die präsentierten Zahlen sind mathematische Echtzeit-Projektionen aus öffentlichen Jahresberichten. Die unbefugte kommerzielle Vervielfältigung ist strengstens untersagt.'
+    leg: 'RECHTLICHER HINWEIS: Dieses Projekt fungiert ausschließlich als Bildungstool. Die unbefugte kommerzielle Vervielfältigung ist strengstens untersagt.'
   },
   pt: {
+    navRep: '📰 RELATÓRIOS', navAbo: '📖 SOBRE NÓS', navGet: '🤝 PARTICIPAR',
+    nlTit: 'MANTENHA-SE ATUALIZADO', nlSub: 'Junte-se à nossa newsletter para receber atualizações de dados e notícias.',
     sub: 'GASTOS MILITARES COMBINADOS EM TEMPO REAL — TOP 10 MUNDIAL (SIPRI 2024)',
     hap: 'ISTO ESTÁ A ACONTECER AGORA', not: 'ISTO É O QUE NÃO ESTAMOS A CONSTRUIR', fun: 'EM VEZ DISSO, ESTE DINHEIRO PODERIA FINANCIAR:',
     bSec: 'POR SEGUNDO', bMin: 'POR MINUTO', bTot: 'TOTAL ACUMULADO',
@@ -397,19 +418,31 @@ const i18n = {
     sTit: 'PARTILHE A REALIDADE', sBod: 'Ferramenta informativa. Ao partilhar, expõe o verdadeiro custo de oportunidade da guerra.', bSha: 'PARTILHAR DADOS',
     giTitle: 'PARTICIPAR', giSubtitle: 'ESTE PROJETO PROCURA ALIADOS',
     giTag1: 'ORGANIZAÇÕES E INSTITUIÇÕES', giCardTitle1: 'COLABORAR',
-    giBody1: 'Instead of War procura parceiros que partilhem a convicção de que os dados podem mudar as narrativas — e as narrativas podem mudar as políticas. Se a sua organização trabalha pela paz, direitos humanos, desenvolvimento ou justiça climática, falemos sobre o que podemos construir juntos.',
+    giBody1: 'Instead of War procura parceiros que partilhem a convicção de que os dados podem mudar as narrativas. Se a sua organização trabalha pela paz ou direitos humanos, falemos.',
     giCta1: '→ ESCREVA-NOS',
     giTag2: 'IMPRENSA E MEDIA', giCardTitle2: 'AMPLIFICAR',
-    giBody2: 'Estes dados são de uso livre. Se estiver a trabalhar numa história sobre gastos militares, custo de oportunidade ou a economia dos conflitos, podemos fornecer contexto, metodologia e uma entrevista direta com o fundador.',
+    giBody2: 'Estes dados são de uso livre. Podemos fornecer contexto, metodologia e uma entrevista direta com o fundador.',
     giCta2: '→ CONTACTO DE IMPRENSA',
     giTag3: 'INDIVIDUAL E INSTITUCIONAL', giCardTitle3: 'APOIAR O PROJETO',
-    giBody3: 'Instead of War não tem financiamento institucional nem publicidade. Existe porque uma pessoa acreditou que devia existir. Se você também acredita, o seu apoio mantém-no independente, em crescimento e livre.',
+    giBody3: 'Instead of War não tem financiamento institucional. O seu apoio mantém-no independente, em crescimento e livre.',
     giCta3: '→ APOIAR-NOS',
-    leg: 'AVISO LEGAL E LIMITAÇÃO DE RESPONSABILIDADE: Este projeto opera exclusivamente como uma ferramenta educacional e de visualização de dados. Os números apresentados são projeções matemáticas extrapoladas de relatórios anuais públicos. É estritamente proibida a reprodução comercial não autorizada.'
+    leg: 'AVISO LEGAL: Este projeto opera exclusivamente como ferramenta educacional. É estritamente proibida a reprodução comercial não autorizada.'
   }
+}; // AQUÍ SE HA AÑADIDO LA LLAVE DE CIERRE QUE FALTABA
+
 function updateTexts() {
   const t = i18n[currentLang] || i18n['en'];
   document.documentElement.lang = currentLang;
+  
+  // Header Navigation
+  document.getElementById('t-nav-rep').innerText = t.navRep;
+  document.getElementById('t-nav-abo').innerText = t.navAbo;
+  document.getElementById('t-nav-get').innerText = t.navGet;
+  
+  // Newsletter
+  document.getElementById('t-nl-tit').innerText = t.nlTit;
+  document.getElementById('t-nl-sub').innerText = t.nlSub;
+
   document.getElementById('t-subtitle').innerText = t.sub;
   document.getElementById('t-happening').innerText = t.hap;
   document.getElementById('t-not-building').innerText = t.not;
@@ -512,4 +545,3 @@ setInterval(updateCounters, 30);
 
 </body>
 </html>
-
