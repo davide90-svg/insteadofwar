@@ -514,7 +514,12 @@ toggleBtns.forEach(btn => {
   });
 });
 
-document.getElementById('t-btn-share').addEventListener('click', async () => {
+document.getElementById('t-btn-share').addEventListener( (e) => {
+      currentLang = e.target.value;
+      localStorage.setItem('lang', currentLang);currentLang = localStorage.getItem('lang') || 'en';
+document.getElementById('langSelect').value = currentLang;
+updateTexts();updateTexts();
+    });'click', async () => {
   const shareData = {
     title: 'Instead Of War',
     text: 'This is what we are not building. See the real-time opportunity cost of military spending.',
