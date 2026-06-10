@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://weblegal.ai/js/wl-cookie-consent.js" data-position="popup" data-color="#10b981"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About | Instead Of War</title>
-<meta name="description" content="About the Instead Of War project and its founder." />
+<title>About Instead of War | The Real Cost of War in Real Time</title>
+<meta name="description" content="Learn why Instead of War was created, how the project turns military spending into real-time human impact, and what future it is trying to make visible." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://insteadofwar.today/about.html" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://insteadofwar.today/about.html" />
+<meta property="og:title" content="About Instead of War | The Real Cost of War in Real Time" />
+<meta property="og:description" content="Why Instead of War exists, how it was built, and why making the opportunity cost of war visible matters." />
+<meta property="og:image" content="https://insteadofwar.today/imagen-preview.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About Instead of War" />
+<meta name="twitter:description" content="A mission-driven project showing the human opportunity cost of military spending in real time." />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&display=swap');
 :root {
   --bg: #000000;
   --red: #ff3333;
   --white: #ffffff;
-  --muted: #666666;
+  --muted: #9a9a9a;
   --surface: #0a0a0a;
   --border: #1f1f1f;
 }
@@ -20,133 +31,174 @@ body {
   background: var(--bg);
   color: var(--white);
   font-family: 'Inter', sans-serif;
-  line-height: 1.7;
-  overflow-x: hidden;
+  line-height: 1.75;
+  padding: 40px 20px 80px;
 }
-.wrap { max-width: 960px; margin: 0 auto; padding: 40px 20px 80px; }
-header {
+.main-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.topbar {
   display: flex;
   justify-content: space-between;
+  gap: 16px;
   align-items: center;
-  margin-bottom: 50px;
-  margin-top: 20px;
+  margin-bottom: 44px;
   flex-wrap: wrap;
-  gap: 20px;
 }
-.top-nav { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
-.nav-btn {
-  background: var(--surface);
-  color: var(--white);
-  border: 1px solid var(--border);
-  font-weight: 700;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s;
-  font-size: 0.85rem;
-  min-height: 44px;
+.nav-left {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.nav-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-.nav-btn:hover { border-color: var(--white); }
-.nav-btn.primary {
-  background: var(--red);
-  color: #000;
-  border: none;
-  font-weight: 900;
-  box-shadow: 0 0 15px rgba(255,51,51,0.3);
-  font-size: 0.95rem;
-}
-.nav-btn.primary:hover { background: #ff4d4d; box-shadow: 0 0 25px rgba(255,51,51,0.6); }
-select {
-  background: var(--surface);
-  color: var(--white);
-  border: 1px solid var(--border);
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-family: 'JetBrains Mono', monospace;
-  cursor: pointer;
-  font-size: 0.9rem;
-  outline: none;
-  transition: border 0.3s;
   min-height: 44px;
-}
-select:hover { border-color: var(--muted); }
-.brand-container { text-align: center; margin-bottom: 40px; }
-.brand { font-size: clamp(3rem, 10vw, 7rem); font-weight: 900; line-height: 0.85; letter-spacing: -4px; text-transform: uppercase; }
-.subtitle { color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 18px; text-transform: uppercase; letter-spacing: 1px; }
-.about-box {
-  background: var(--surface);
+  padding: 10px 18px;
   border: 1px solid var(--border);
-  padding: clamp(24px, 4vw, 48px);
-}
-.about-title {
-  color: var(--red);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 900;
-  margin-bottom: 28px;
-  text-transform: uppercase;
-  line-height: 0.95;
-}
-.about-content p {
+  background: var(--surface);
   color: var(--white);
-  opacity: 0.88;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+.nav-link:hover { border-color: var(--white); }
+select {
+  min-height: 44px;
+  padding: 10px 14px;
+  background: var(--surface);
+  color: var(--white);
+  border: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+}
+.hero {
+  margin-bottom: 42px;
+}
+.kicker {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+h1 {
+  font-size: clamp(2.4rem, 7vw, 4.6rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -2px;
   margin-bottom: 18px;
+}
+.hero-intro {
+  max-width: 760px;
+  color: var(--muted);
   font-size: 1.05rem;
 }
-.about-content a {
+.section {
+  margin-top: 42px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+h2 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 18px;
+}
+p {
+  color: var(--muted);
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
+a {
   color: var(--white);
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
-.footer-back {
-  margin-top: 24px;
+.cta-box {
+  margin-top: 40px;
+  padding: 26px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.cta-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.cta-link {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 11px 18px;
+  border: 1px solid var(--white);
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.82rem;
+  font-weight: 800;
 }
+.cta-link:hover {
+  background: var(--white);
+  color: var(--bg);
+}
+footer {
+  margin-top: 50px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.footer-line {
+  color: #666;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.footer-links a:hover { border-color: var(--white); }
 @media (max-width: 768px) {
-  .wrap { padding: 24px 16px 60px; }
-  header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 14px;
-    margin-top: 0;
-    margin-bottom: 28px;
-  }
-  .top-nav {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    width: 100%;
-    order: 2;
-  }
-  #langSelect {
-    width: 100%;
-    order: 1;
-  }
-  .nav-btn,
-  .footer-back {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-  .brand {
-    line-height: 0.9;
-    letter-spacing: -2px;
-  }
-  .about-content p { font-size: 1rem; }
+  body { padding: 24px 16px 60px; }
+  .topbar { flex-direction: column; align-items: stretch; }
+  .nav-left { display: grid; grid-template-columns: 1fr; }
+  .nav-link, .cta-link, select { width: 100%; }
+  .footer-links { display: grid; grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
-<main class="wrap">
-  <header>
-    <nav class="top-nav">
-      <a href="./index.html" class="nav-btn primary" id="t-nav-home">← HOME</a>
-      <a href="./reports.html" class="nav-btn" id="t-nav-rep">📰 REPORTS</a>
-      <a href="./index.html#get-involved" class="nav-btn" id="t-nav-get">🤝 GET INVOLVED</a>
-    </nav>
+<main class="main-wrap">
+  <div class="topbar">
+    <div class="nav-left">
+      <a href="./index.html" class="nav-link" id="nav-home">← HOME</a>
+      <a href="./reports.html" class="nav-link" id="nav-reports">REPORTS</a>
+    </div>
     <select id="langSelect" aria-label="Select language">
       <option value="en">🇺🇸 ENGLISH</option>
       <option value="es">🇪🇸 ESPAÑOL</option>
@@ -155,108 +207,272 @@ select:hover { border-color: var(--muted); }
       <option value="de">🇩🇪 DEUTSCH</option>
       <option value="pt">🇵🇹 PORTUGUÊS</option>
     </select>
-  </header>
-
-  <div class="brand-container">
-    <h1 class="brand">INSTEAD<br>OF<br><span style="color: var(--red);">WAR</span></h1>
-    <p class="subtitle" id="t-subtitle">ABOUT THE PROJECT</p>
   </div>
 
-  <section class="about-box" aria-labelledby="about-title">
-    <h2 class="about-title" id="about-title">ABOUT</h2>
-    <div class="about-content" id="about-content"></div>
-    <a class="nav-btn footer-back" href="./index.html" id="t-back-home">← BACK HOME</a>
+  <section class="hero">
+    <div class="kicker" id="kicker">ABOUT THE PROJECT</div>
+    <h1 id="hero-title">About Instead of War</h1>
+    <p class="hero-intro" id="hero-intro">Instead of War is a mission-driven project that turns military spending into something impossible to ignore: human opportunity cost. It shows, in real time, how money spent on war could instead fund housing, food, healthcare, education, and climate adaptation.</p>
   </section>
+
+  <section class="section">
+    <h2 id="h2-origin">Why this project exists</h2>
+    <p id="p1"></p>
+    <p id="p2"></p>
+  </section>
+
+  <section class="section">
+    <h2 id="h2-cost">The real cost of war</h2>
+    <p id="p3"></p>
+    <p id="p4"></p>
+  </section>
+
+  <section class="section">
+    <h2 id="h2-built">How Instead of War was developed</h2>
+    <p id="p5"></p>
+    <p id="p6"></p>
+  </section>
+
+  <section class="section">
+    <h2 id="h2-future">The future of the project</h2>
+    <p id="p7"></p>
+    <p id="p8"></p>
+  </section>
+
+  <section class="section">
+    <h2 id="h2-matters">Why it matters</h2>
+    <p id="p9"></p>
+    <p id="p10"></p>
+  </section>
+
+  <div class="cta-box">
+    <div class="cta-title" id="cta-title"></div>
+    <p id="cta-body"></p>
+    <a class="cta-link" href="mailto:insteadofwar@yahoo.com" id="cta-link">Contact the project</a>
+  </div>
+
+  <footer>
+    <div class="footer-line" id="footer-line"></div>
+    <div class="footer-links">
+      <a href="mailto:insteadofwar@yahoo.com" id="footer-contact">Contact</a>
+      <a href="https://ko-fi.com/W7W61X03BU" target="_blank" rel="noopener noreferrer" id="footer-donate">Support / Donate</a>
+    </div>
+  </footer>
 </main>
+
 <script>
 let currentLang = (() => {
   try { return localStorage.getItem('lang') || 'en'; } catch (e) { return 'en'; }
 })();
-const aboutI18n = {
+
+const content = {
   en: {
-    navHome: '← HOME', navRep: '📰 REPORTS', navGet: '🤝 GET INVOLVED', sub: 'ABOUT THE PROJECT', back: '← BACK HOME', title: 'ABOUT',
-    body: `
-      <p>My name is Davide Parisi. I'm not an academic, nor an activist by profession. I'm someone who has spent years working inside systems I fundamentally disagree with, thinking about what kind of world we're actually building — and what we're choosing not to build.</p>
-      <p>This project was born from a simple conviction: every human being has an unalienable right to dignity. Not dignity as an abstract concept, but as something concrete — a decent home, guaranteed food, access to quality education, and healthcare. These aren't privileges. They're the baseline of what it means to be human.</p>
-      <p>The numbers on this site are not metaphors. They are a choice made visible. Every second, humanity spends money on war — the most destructive and inhumane institution in our history — while the resources needed to guarantee dignity to every person on earth already exist. They are simply pointed in the wrong direction.</p>
-      <p>I built this as a tool for those who need to see it clearly. If it moves something in you, I'd like to hear from you.</p>
-      <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
-    `
+    title: 'About Instead of War | The Real Cost of War in Real Time',
+    description: 'Learn why Instead of War was created, how the project turns military spending into real-time human impact, and what future it is trying to make visible.',
+    ogTitle: 'About Instead of War | The Real Cost of War in Real Time',
+    ogDescription: 'Why Instead of War exists, how it was built, and why making the opportunity cost of war visible matters.',
+    twitterTitle: 'About Instead of War',
+    twitterDescription: 'A mission-driven project showing the human opportunity cost of military spending in real time.',
+    navHome: '← HOME', navReports: 'REPORTS', kicker: 'ABOUT THE PROJECT', heroTitle: 'About Instead of War',
+    heroIntro: 'Instead of War is a mission-driven project that turns military spending into something impossible to ignore: human opportunity cost. It shows, in real time, how money spent on war could instead fund housing, food, healthcare, education, and climate adaptation.',
+    h2Origin: 'Why this project exists',
+    p1: 'My name is Davide Parisi. I’m not an academic, and I’m not an activist by profession. I’m someone who has spent years working inside systems I fundamentally disagree with, asking a question that has never left me: what kind of world are we actually building, and what kind of world are we choosing not to build?',
+    p2: 'Instead of War was born from that question. It began with a simple conviction: every human being has an unalienable right to dignity. Not dignity as an abstract ideal, but as something material and real — a safe home, guaranteed food, quality education, healthcare, and the basic conditions for a life that is not defined by deprivation.',
+    h2Cost: 'The real cost of war',
+    p3: 'The core idea behind this project is simple: war is not only destruction on the battlefield. War is also the loss of everything that money could have built instead. Every second, global military spending moves resources away from human needs and toward organized destruction. That is the real cost of war, and that is what this website makes visible.',
+    p4: 'The numbers on this site are not metaphors. They are not slogans. They are a real-time translation of military expenditure into missed human possibility. What could have been homes becomes weapons. What could have been schools becomes escalation. What could have been healthcare becomes silence, delay, and abandonment.',
+    h2Built: 'How Instead of War was developed',
+    p5: 'This project was developed independently, step by step, with limited resources but with a clear purpose: to build a public-facing tool that transforms abstract data into moral clarity. Reports and annual figures often remain distant, technical, and easy to ignore. A live counter changes that. It makes the scale immediate. It forces the viewer to confront not just how much is being spent, but what humanity is refusing to prioritize.',
+    p6: 'From the beginning, the goal was to create something simple, accessible, multilingual, and emotionally direct. The website is designed to be understood in seconds, but remembered for much longer. It is a tool for awareness, but also for reflection, journalism, education, and public conversation.',
+    h2Future: 'The future of the project',
+    p7: 'The future of Instead of War depends on how far this idea can grow without losing its integrity. There are major challenges ahead: improving the methodology, refining the comparisons, expanding language coverage, deepening the research, and building ethical support around the project so it can remain independent.',
+    p8: 'But the biggest challenge is not technical. It is cultural. We live in a world where military spending is normalized, while human suffering is treated as inevitable. This project exists to challenge that normalization and to ask whether our political imagination has become too small.',
+    h2Matters: 'Why it matters',
+    p9: 'Instead of War is not claiming that a website alone can change the world. But visibility matters. Language matters. Framing matters. When people can clearly see the opportunity cost of war, new moral and political questions become harder to avoid.',
+    p10: 'This is a project for people who believe that public money is also a public moral choice. It is for people who want to measure power not only by what states can destroy, but by what humanity is capable of protecting, feeding, healing, and building.',
+    ctaTitle: 'If this project moves something in you, I would like to hear from you.', ctaBody: 'Instead of War is still growing. It needs readers, allies, journalists, researchers, collaborators, and people willing to help make its message travel further.', ctaLink: 'Contact the project', footer: 'INSTEAD OF WAR — CREATED BY DAVIDE PARISI', footerContact: 'Contact', footerDonate: 'Support / Donate'
   },
   es: {
-    navHome: '← INICIO', navRep: '📰 INFORMES', navGet: '🤝 PARTICIPA', sub: 'SOBRE EL PROYECTO', back: '← VOLVER AL INICIO', title: 'SOBRE EL PROYECTO',
-    body: `
-      <p>Me llamo Davide Parisi. No soy académico, ni activista de profesión. Soy alguien que ha pasado años trabajando dentro de sistemas con los que discrepo profundamente, reflexionando sobre el tipo de mundo que estamos construyendo de verdad, y el que estamos eligiendo no construir.</p>
-      <p>Este proyecto nace de una convicción muy sencilla: todo ser humano tiene un derecho inalienable a la dignidad. No a una dignidad entendida como un concepto abstracto, sino como una realidad tangible: un hogar en condiciones, comida garantizada, acceso a una educación de calidad y atención médica. No son privilegios. Son la base misma de lo que significa ser humano.</p>
-      <p>Las cifras de esta página no son metáforas; son una elección que se ha hecho visible. Cada segundo, la humanidad gasta dinero en la guerra —la institución más destructiva e inhumana de nuestra historia— mientras que los recursos necesarios para garantizar la dignidad de cada persona del planeta ya existen. Simplemente están apuntando en la dirección equivocada.</p>
-      <p>He creado esto como una herramienta para quienes necesitan verlo con claridad. Si esto resuena contigo, me encantaría contactes conmigo.</p>
-      <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
-    `
+    title: 'Sobre Instead of War | El verdadero coste de la guerra en tiempo real',
+    description: 'Descubre por qué nació Instead of War, cómo transforma el gasto militar en impacto humano en tiempo real y qué futuro intenta hacer visible.',
+    ogTitle: 'Sobre Instead of War | El verdadero coste de la guerra en tiempo real',
+    ogDescription: 'Por qué existe Instead of War, cómo se ha construido y por qué importa hacer visible el coste de oportunidad de la guerra.',
+    twitterTitle: 'Sobre Instead of War',
+    twitterDescription: 'Un proyecto con vocación pública que muestra el coste humano de oportunidad del gasto militar en tiempo real.',
+    navHome: '← INICIO', navReports: 'INFORMES', kicker: 'SOBRE EL PROYECTO', heroTitle: 'Sobre Instead of War',
+    heroIntro: 'Instead of War es un proyecto con vocación pública que convierte el gasto militar en algo imposible de ignorar: su coste de oportunidad humano. Muestra, en tiempo real, cómo el dinero destinado a la guerra podría financiar vivienda, alimentación, sanidad, educación y adaptación climática.',
+    h2Origin: 'Por qué existe este proyecto',
+    p1: 'Me llamo Davide Parisi. No soy académico ni activista de profesión. Soy una persona que ha pasado años trabajando dentro de sistemas con los que no está de acuerdo en lo esencial, haciéndose una pregunta que nunca ha dejado de acompañarle: qué tipo de mundo estamos construyendo realmente y qué tipo de mundo estamos eligiendo no construir.',
+    p2: 'Instead of War nació de esa pregunta. Nació de una convicción simple: todo ser humano tiene un derecho inalienable a la dignidad. No la dignidad como ideal abstracto, sino como algo material y concreto: una vivienda segura, comida garantizada, educación de calidad, sanidad y las condiciones básicas para una vida que no esté definida por la carencia.',
+    h2Cost: 'El verdadero coste de la guerra',
+    p3: 'La idea central de este proyecto es simple: la guerra no es solo destrucción en el campo de batalla. La guerra también es la pérdida de todo aquello que ese dinero podría haber construido. Cada segundo, el gasto militar global desvía recursos lejos de las necesidades humanas y los dirige hacia la destrucción organizada. Ese es el verdadero coste de la guerra, y eso es lo que esta web hace visible.',
+    p4: 'Los números de esta web no son metáforas. No son eslóganes. Son una traducción en tiempo real del gasto militar en posibilidades humanas perdidas. Lo que podrían haber sido hogares se convierte en armas. Lo que podrían haber sido escuelas se convierte en escalada. Lo que podría haber sido atención sanitaria se convierte en silencio, demora y abandono.',
+    h2Built: 'Cómo se ha desarrollado Instead of War',
+    p5: 'Este proyecto se ha desarrollado de forma independiente, paso a paso, con recursos limitados pero con un propósito claro: construir una herramienta pública capaz de transformar datos abstractos en claridad moral. Los informes y las cifras anuales suelen permanecer distantes, técnicas y fáciles de ignorar. Un contador en vivo cambia eso. Hace que la escala sea inmediata. Obliga a mirar no solo cuánto se está gastando, sino qué está decidiendo no priorizar la humanidad.',
+    p6: 'Desde el principio, el objetivo fue crear algo simple, accesible, multilingüe y emocionalmente directo. La web está diseñada para entenderse en segundos, pero para permanecer mucho más tiempo en la memoria. Es una herramienta de concienciación, pero también de reflexión, periodismo, educación y conversación pública.',
+    h2Future: 'El futuro del proyecto',
+    p7: 'El futuro de Instead of War depende de hasta dónde pueda crecer esta idea sin perder su integridad. Hay retos importantes por delante: mejorar la metodología, afinar las comparaciones, ampliar la cobertura idiomática, profundizar la investigación y construir un apoyo ético alrededor del proyecto para que pueda seguir siendo independiente.',
+    p8: 'Pero el mayor reto no es técnico. Es cultural. Vivimos en un mundo donde el gasto militar se normaliza mientras el sufrimiento humano se trata como inevitable. Este proyecto existe para desafiar esa normalización y para preguntar si nuestra imaginación política se ha vuelto demasiado pequeña.',
+    h2Matters: 'Por qué importa',
+    p9: 'Instead of War no afirma que una web por sí sola pueda cambiar el mundo. Pero la visibilidad importa. El lenguaje importa. El marco importa. Cuando las personas pueden ver con claridad el coste de oportunidad de la guerra, las preguntas morales y políticas se vuelven más difíciles de esquivar.',
+    p10: 'Este es un proyecto para quienes creen que el dinero público también es una elección moral pública. Es para quienes quieren medir el poder no solo por lo que los Estados pueden destruir, sino por lo que la humanidad es capaz de proteger, alimentar, sanar y construir.',
+    ctaTitle: 'Si este proyecto te mueve por dentro, me gustaría escucharte.', ctaBody: 'Instead of War sigue creciendo. Necesita lectores, aliados, periodistas, investigadores, colaboradores y personas dispuestas a ayudar a que su mensaje llegue más lejos.', ctaLink: 'Contactar con el proyecto', footer: 'INSTEAD OF WAR — CREADO POR DAVIDE PARISI', footerContact: 'Contacto', footerDonate: 'Apoyar / Donar'
   },
   it: {
-    navHome: '← HOME', navRep: '📰 REPORT', navGet: '🤝 PARTECIPA', sub: 'SUL PROGETTO', back: '← TORNA ALLA HOME', title: 'CHI SIAMO',
-    body: `
-      <p>Mi chiamo Davide Parisi. Non sono un accademico, né un attivista di professione. Sono una persona che ha trascorso anni a lavorare all'interno di sistemi che non condivide affatto, riflettendo su che tipo di mondo stiamo realmente costruendo — e su cosa, invece, stiamo scegliendo di non costruire.</p>
-      <p>Questo progetto nasce da una semplice convinzione: ogni essere umano ha un diritto inalienabile alla dignità. Non la dignità come concetto astratto, ma come qualcosa di concreto: una casa dignitosa, cibo garantito, accesso a un'istruzione di qualità e alle cure mediche. Questi non sono privilegi. Sono le basi stesse di ciò che significa essere umani.</p>
-      <p>I numeri su questo sito non sono metafore. Sono una scelta resa visibile. Ogni secondo, l'umanità spende denaro per la guerra — l'istituzione più distruttiva e disumana della nostra storia — mentre le risorse necessarie per garantire dignità a ogni persona sulla terra esistono già. Sono semplicemente puntate nella direzione sbagliata.</p>
-      <p>Ho costruito tutto questo come strumento per chi ha bisogno di vederci chiaro. Se smuove qualcosa dentro di te, mi farebbe piacere ascoltarti.</p>
-      <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
-    `
+    title: 'Chi è Instead of War | Il vero costo della guerra in tempo reale',
+    description: 'Scopri perché è nato Instead of War, come trasforma la spesa militare in impatto umano in tempo reale e quale futuro cerca di rendere visibile.',
+    ogTitle: 'Chi è Instead of War | Il vero costo della guerra in tempo reale',
+    ogDescription: 'Perché esiste Instead of War, come è stato costruito e perché rendere visibile il costo opportunità della guerra è importante.',
+    twitterTitle: 'Chi è Instead of War',
+    twitterDescription: 'Un progetto con una missione pubblica che mostra il costo umano di opportunità della spesa militare in tempo reale.',
+    navHome: '← HOME', navReports: 'REPORT', kicker: 'IL PROGETTO', heroTitle: 'Chi è Instead of War',
+    heroIntro: 'Instead of War è un progetto con una missione precisa: trasformare la spesa militare in qualcosa di impossibile da ignorare, il suo costo umano di opportunità. Mostra in tempo reale come il denaro destinato alla guerra potrebbe invece finanziare casa, cibo, sanità, istruzione e adattamento climatico.',
+    h2Origin: 'Perché esiste questo progetto',
+    p1: 'Mi chiamo Davide Parisi. Non sono un accademico e non sono un attivista di professione. Sono una persona che ha trascorso anni a lavorare dentro sistemi con cui non è d’accordo nella sostanza, portandosi dietro una domanda che non lo ha mai lasciato: che tipo di mondo stiamo davvero costruendo e quale stiamo scegliendo di non costruire?',
+    p2: 'Instead of War nasce da questa domanda. Nasce da una convinzione semplice: ogni essere umano ha un diritto inalienabile alla dignità. Non la dignità come ideale astratto, ma come qualcosa di materiale e concreto — una casa sicura, cibo garantito, istruzione di qualità, sanità e le condizioni minime per una vita non definita dalla privazione.',
+    h2Cost: 'Il vero costo della guerra',
+    p3: 'L’idea centrale di questo progetto è semplice: la guerra non è solo distruzione sul campo di battaglia. La guerra è anche la perdita di tutto ciò che quel denaro avrebbe potuto costruire. Ogni secondo, la spesa militare globale sottrae risorse ai bisogni umani e le dirige verso la distruzione organizzata. Questo è il vero costo della guerra, ed è ciò che questo sito rende visibile.',
+    p4: 'I numeri su questo sito non sono metafore. Non sono slogan. Sono una traduzione in tempo reale della spesa militare in possibilità umane mancate. Ciò che avrebbe potuto essere casa diventa arma. Ciò che avrebbe potuto essere scuola diventa escalation. Ciò che avrebbe potuto essere cura diventa silenzio, ritardo e abbandono.',
+    h2Built: 'Come è stato sviluppato Instead of War',
+    p5: 'Questo progetto è stato sviluppato in modo indipendente, passo dopo passo, con risorse limitate ma con uno scopo preciso: costruire uno strumento pubblico capace di trasformare dati astratti in chiarezza morale. I rapporti e le cifre annuali restano spesso lontani, tecnici e facili da ignorare. Un contatore in tempo reale cambia questo. Rende immediata la scala del problema. Costringe a guardare non solo quanto si sta spendendo, ma cosa l’umanità sta scegliendo di non mettere al primo posto.',
+    p6: 'Fin dall’inizio, l’obiettivo era creare qualcosa di semplice, accessibile, multilingue ed emotivamente diretto. Il sito è pensato per essere compreso in pochi secondi, ma ricordato molto più a lungo. È uno strumento di consapevolezza, ma anche di riflessione, giornalismo, educazione e conversazione pubblica.',
+    h2Future: 'Il futuro del progetto',
+    p7: 'Il futuro di Instead of War dipende da quanto questa idea potrà crescere senza perdere la propria integrità. Ci sono sfide importanti davanti: migliorare la metodologia, affinare i confronti, ampliare la copertura linguistica, approfondire la ricerca e costruire un sostegno etico attorno al progetto affinché possa restare indipendente.',
+    p8: 'Ma la sfida più grande non è tecnica. È culturale. Viviamo in un mondo in cui la spesa militare viene normalizzata mentre la sofferenza umana viene trattata come inevitabile. Questo progetto esiste per mettere in discussione quella normalizzazione e per chiedere se la nostra immaginazione politica sia diventata troppo piccola.',
+    h2Matters: 'Perché conta',
+    p9: 'Instead of War non sostiene che un sito web da solo possa cambiare il mondo. Ma la visibilità conta. Il linguaggio conta. Il modo in cui incorniciamo le cose conta. Quando le persone possono vedere con chiarezza il costo di opportunità della guerra, le domande morali e politiche diventano più difficili da evitare.',
+    p10: 'Questo è un progetto per chi crede che il denaro pubblico sia anche una scelta morale pubblica. È per chi vuole misurare il potere non solo da ciò che gli Stati possono distruggere, ma da ciò che l’umanità è capace di proteggere, nutrire, curare e costruire.',
+    ctaTitle: 'Se questo progetto muove qualcosa dentro di te, mi piacerebbe ascoltarti.', ctaBody: 'Instead of War è ancora in crescita. Ha bisogno di lettori, alleati, giornalisti, ricercatori, collaboratori e persone disposte ad aiutare il suo messaggio a viaggiare più lontano.', ctaLink: 'Contatta il progetto', footer: 'INSTEAD OF WAR — CREATO DA DAVIDE PARISI', footerContact: 'Contatto', footerDonate: 'Sostieni / Dona'
   },
   fr: {
-    navHome: '← ACCUEIL', navRep: '📰 RAPPORTS', navGet: '🤝 PARTICIPER', sub: 'À PROPOS DU PROJET', back: '← RETOUR À L’ACCUEIL', title: 'À PROPOS',
-    body: `
-      <p>Je m'appelle Davide Parisi. Je ne suis ni universitaire, ni militant de profession. Je suis quelqu'un qui a passé des années à travailler au cœur de systèmes avec lesquels je suis fondamentalement en désaccord, tout en réfléchissant au monde que nous sommes en train de bâtir — et à celui que nous choisissons d'ignorer.</p>
-      <p>Ce projet est né d'une conviction simple : tout être humain a un droit inaliénable à la dignité. Pas une dignité abstraite, mais une réalité concrète : un logement décent, de la nourriture garantie, l'accès à une éducation de qualité et à des soins de santé. Ce ne sont pas des privilèges. C'est le fondement même de la condition humaine.</p>
-      <p>Les chiffres que vous voyez sur ce site ne sont pas des métaphores. Ils rendent un choix visible. Chaque seconde, l'humanité dépense de l'argent pour la guerre — l'institution la plus destructrice et la plus inhumaine de notre histoire — alors que les ressources nécessaires pour garantir la dignité de chaque personne sur terre existent déjà. Elles sont simplement dirigées vers la mauvaise cible.</p>
-      <p>J'ai conçu ce projet comme un outil pour ceux qui ont besoin de voir les choses clairement. Si cela résonne en vous, j'aimerais beaucoup avoir de vos nouvelles.</p>
-      <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
-    `
+    title: 'À propos de Instead of War | Le vrai coût de la guerre en temps réel',
+    description: 'Découvrez pourquoi Instead of War a été créé, comment le projet transforme les dépenses militaires en impact humain en temps réel et quel avenir il cherche à rendre visible.',
+    ogTitle: 'À propos de Instead of War | Le vrai coût de la guerre en temps réel',
+    ogDescription: 'Pourquoi Instead of War existe, comment il a été construit et pourquoi rendre visible le coût d’opportunité de la guerre est essentiel.',
+    twitterTitle: 'À propos de Instead of War',
+    twitterDescription: 'Un projet à vocation publique qui montre le coût humain d’opportunité des dépenses militaires en temps réel.',
+    navHome: '← ACCUEIL', navReports: 'RAPPORTS', kicker: 'À PROPOS DU PROJET', heroTitle: 'À propos de Instead of War',
+    heroIntro: 'Instead of War est un projet à vocation publique qui transforme les dépenses militaires en quelque chose d’impossible à ignorer : leur coût humain d’opportunité. Il montre, en temps réel, comment l’argent consacré à la guerre pourrait financer le logement, l’alimentation, la santé, l’éducation et l’adaptation climatique.',
+    h2Origin: 'Pourquoi ce projet existe',
+    p1: 'Je m’appelle Davide Parisi. Je ne suis ni universitaire ni militant de profession. Je suis une personne qui a passé des années à travailler au sein de systèmes avec lesquels elle est fondamentalement en désaccord, en portant avec elle une question qui ne l’a jamais quittée : quel monde sommes-nous réellement en train de construire, et quel monde choisissons-nous de ne pas construire ?',
+    p2: 'Instead of War est né de cette question. Il est né d’une conviction simple : chaque être humain a un droit inaliénable à la dignité. Non pas la dignité comme idéal abstrait, mais comme réalité concrète et matérielle — un logement sûr, une alimentation garantie, une éducation de qualité, la santé et les conditions minimales d’une vie qui ne soit pas définie par le manque.',
+    h2Cost: 'Le véritable coût de la guerre',
+    p3: 'L’idée centrale de ce projet est simple : la guerre n’est pas seulement la destruction sur le champ de bataille. La guerre, c’est aussi la perte de tout ce que cet argent aurait pu construire à la place. Chaque seconde, les dépenses militaires mondiales détournent des ressources loin des besoins humains et les dirigent vers la destruction organisée. Voilà le véritable coût de la guerre, et voilà ce que ce site rend visible.',
+    p4: 'Les chiffres de ce site ne sont pas des métaphores. Ce ne sont pas des slogans. Ils constituent une traduction en temps réel des dépenses militaires en possibilités humaines perdues. Ce qui aurait pu devenir des foyers devient des armes. Ce qui aurait pu devenir des écoles devient une escalade. Ce qui aurait pu devenir des soins devient silence, retard et abandon.',
+    h2Built: 'Comment Instead of War a été développé',
+    p5: 'Ce projet a été développé de manière indépendante, étape par étape, avec des ressources limitées mais avec une intention claire : construire un outil public capable de transformer des données abstraites en clarté morale. Les rapports et les chiffres annuels restent souvent lointains, techniques et faciles à ignorer. Un compteur en direct change cela. Il rend l’échelle immédiate. Il oblige à regarder non seulement combien est dépensé, mais aussi ce que l’humanité choisit de ne pas prioriser.',
+    p6: 'Dès le départ, l’objectif était de créer quelque chose de simple, accessible, multilingue et émotionnellement direct. Le site a été conçu pour être compris en quelques secondes, mais pour rester en mémoire bien plus longtemps. C’est un outil de sensibilisation, mais aussi de réflexion, de journalisme, d’éducation et de conversation publique.',
+    h2Future: 'L’avenir du projet',
+    p7: 'L’avenir de Instead of War dépend de la capacité de cette idée à grandir sans perdre son intégrité. De grands défis restent à relever : améliorer la méthodologie, affiner les comparaisons, élargir la couverture linguistique, approfondir la recherche et construire un soutien éthique autour du projet afin qu’il puisse rester indépendant.',
+    p8: 'Mais le plus grand défi n’est pas technique. Il est culturel. Nous vivons dans un monde où les dépenses militaires sont normalisées, tandis que la souffrance humaine est traitée comme inévitable. Ce projet existe pour contester cette normalisation et pour demander si notre imagination politique n’est pas devenue trop étroite.',
+    h2Matters: 'Pourquoi cela compte',
+    p9: 'Instead of War ne prétend pas qu’un site web puisse, à lui seul, changer le monde. Mais la visibilité compte. Les mots comptent. Le cadrage compte. Lorsque les gens peuvent voir clairement le coût d’opportunité de la guerre, les questions morales et politiques deviennent plus difficiles à éviter.',
+    p10: 'C’est un projet pour celles et ceux qui croient que l’argent public est aussi un choix moral public. Pour celles et ceux qui veulent mesurer la puissance non seulement à ce que les États peuvent détruire, mais aussi à ce que l’humanité est capable de protéger, nourrir, soigner et construire.',
+    ctaTitle: 'Si ce projet fait naître quelque chose en vous, j’aimerais vous lire.', ctaBody: 'Instead of War continue de grandir. Il a besoin de lecteurs, d’alliés, de journalistes, de chercheurs, de collaborateurs et de personnes prêtes à aider son message à aller plus loin.', ctaLink: 'Contacter le projet', footer: 'INSTEAD OF WAR — CRÉÉ PAR DAVIDE PARISI', footerContact: 'Contact', footerDonate: 'Soutenir / Donner'
   },
   de: {
-    navHome: '← STARTSEITE', navRep: '📰 BERICHTE', navGet: '🤝 MITMACHEN', sub: 'ÜBER DAS PROJEKT', back: '← ZURÜCK ZUR STARTSEITE', title: 'ÜBER DAS PROJEKT',
-    body: `
-      <p>Mein Name ist Davide Parisi. Ich bin weder Akademiker noch von Beruf Aktivist. Ich bin jemand, der jahrelang in Systemen gearbeitet hat, die er im Grunde ablehnt, und der darüber nachgedacht hat, was für eine Welt wir eigentlich aufbauen – und worauf wir uns entscheiden, zu verzichten.</p>
-      <p>Dieses Projekt entstand aus einer einfachen Überzeugung: Jeder Mensch hat ein unveräußerliches Recht auf Würde. Keine Würde als abstraktes Konzept, sondern als etwas Handfestes – ein anständiges Zuhause, garantierte Ernährung, Zugang zu hochwertiger Bildung und Gesundheitsversorgung. Das sind keine Privilegien. Sie sind das Fundament des Menschseins.</p>
-      <p>Die Zahlen auf dieser Website sind keine Metaphern. Sie machen eine Entscheidung sichtbar. In jeder Sekunde gibt die Menschheit Geld für den Krieg aus – die zerstörerischste und unmenschlichste Institution unserer Geschichte –, während die Ressourcen, die nötig wären, um jedem Menschen auf der Erde ein würdevolles Leben zu garantieren, längst vorhanden sind. Sie werden nur in die falsche Richtung gelenkt.</p>
-      <p>Ich habe dies als Werkzeug für all jene entwickelt, die es klar vor Augen haben müssen. Wenn es in dir etwas bewegt, würde ich mich freuen, von dir zu hören.</p>
-      <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
-    `
+    title: 'Über Instead of War | Die wahren Kosten des Krieges in Echtzeit',
+    description: 'Erfahren Sie, warum Instead of War entstanden ist, wie das Projekt Militärausgaben in menschliche Auswirkungen in Echtzeit übersetzt und welche Zukunft es sichtbar machen will.',
+    ogTitle: 'Über Instead of War | Die wahren Kosten des Krieges in Echtzeit',
+    ogDescription: 'Warum Instead of War existiert, wie es aufgebaut wurde und weshalb es wichtig ist, die Opportunitätskosten des Krieges sichtbar zu machen.',
+    twitterTitle: 'Über Instead of War',
+    twitterDescription: 'Ein öffentlich ausgerichtetes Projekt, das die menschlichen Opportunitätskosten von Militärausgaben in Echtzeit sichtbar macht.',
+    navHome: '← STARTSEITE', navReports: 'BERICHTE', kicker: 'ÜBER DAS PROJEKT', heroTitle: 'Über Instead of War',
+    heroIntro: 'Instead of War ist ein Projekt mit einer klaren Mission: Militärausgaben in etwas zu verwandeln, das unmöglich zu ignorieren ist — in ihre menschlichen Opportunitätskosten. Es zeigt in Echtzeit, wie Geld, das für Krieg ausgegeben wird, stattdessen Wohnen, Nahrung, Gesundheit, Bildung und Klimaanpassung finanzieren könnte.',
+    h2Origin: 'Warum dieses Projekt existiert',
+    p1: 'Mein Name ist Davide Parisi. Ich bin weder Akademiker noch beruflich Aktivist. Ich bin jemand, der Jahre innerhalb von Systemen verbracht hat, mit denen er im Kern nicht einverstanden ist, und der dabei eine Frage nie mehr losgeworden ist: Welche Art von Welt bauen wir tatsächlich auf — und welche Art von Welt entscheiden wir uns, nicht aufzubauen?',
+    p2: 'Instead of War entstand aus dieser Frage. Es entstand aus einer einfachen Überzeugung: Jeder Mensch hat ein unveräußerliches Recht auf Würde. Nicht Würde als abstraktes Ideal, sondern als etwas Materielles und Konkretes — ein sicheres Zuhause, garantierte Nahrung, hochwertige Bildung, Gesundheitsversorgung und die grundlegenden Bedingungen für ein Leben, das nicht von Mangel geprägt ist.',
+    h2Cost: 'Die wirklichen Kosten des Krieges',
+    p3: 'Die zentrale Idee dieses Projekts ist einfach: Krieg ist nicht nur Zerstörung auf dem Schlachtfeld. Krieg ist auch der Verlust all dessen, was dieses Geld stattdessen hätte aufbauen können. Jede Sekunde lenken globale Militärausgaben Ressourcen von menschlichen Bedürfnissen weg und in organisierte Zerstörung. Das sind die wirklichen Kosten des Krieges — und genau das macht diese Website sichtbar.',
+    p4: 'Die Zahlen auf dieser Website sind keine Metaphern. Sie sind keine Slogans. Sie sind eine Echtzeit-Übersetzung von Militärausgaben in verpasste menschliche Möglichkeiten. Was Häuser hätte werden können, wird zu Waffen. Was Schulen hätte werden können, wird zu Eskalation. Was Gesundheitsversorgung hätte werden können, wird zu Schweigen, Verzögerung und Vernachlässigung.',
+    h2Built: 'Wie Instead of War entwickelt wurde',
+    p5: 'Dieses Projekt wurde unabhängig, Schritt für Schritt, mit begrenzten Ressourcen, aber mit einem klaren Ziel entwickelt: ein öffentliches Werkzeug zu schaffen, das abstrakte Daten in moralische Klarheit übersetzt. Berichte und Jahreszahlen bleiben oft fern, technisch und leicht zu ignorieren. Ein Live-Zähler verändert das. Er macht das Ausmaß unmittelbar sichtbar. Er zwingt die Betrachterinnen und Betrachter nicht nur dazu zu sehen, wie viel ausgegeben wird, sondern auch, was die Menschheit nicht zu priorisieren bereit ist.',
+    p6: 'Von Anfang an war das Ziel, etwas Einfaches, Zugängliches, Mehrsprachiges und emotional Direktes zu schaffen. Die Website ist so gestaltet, dass sie in Sekunden verstanden wird, aber viel länger im Gedächtnis bleibt. Sie ist ein Werkzeug für Bewusstsein, aber auch für Reflexion, Journalismus, Bildung und öffentliche Debatte.',
+    h2Future: 'Die Zukunft des Projekts',
+    p7: 'Die Zukunft von Instead of War hängt davon ab, wie weit diese Idee wachsen kann, ohne ihre Integrität zu verlieren. Große Herausforderungen liegen vor uns: die Methodik verbessern, die Vergleiche verfeinern, die sprachliche Reichweite ausbauen, die Recherche vertiefen und eine ethische Unterstützung rund um das Projekt aufbauen, damit es unabhängig bleiben kann.',
+    p8: 'Doch die größte Herausforderung ist nicht technisch. Sie ist kulturell. Wir leben in einer Welt, in der Militärausgaben normalisiert werden, während menschliches Leid als unvermeidlich gilt. Dieses Projekt existiert, um diese Normalisierung in Frage zu stellen und zu fragen, ob unsere politische Vorstellungskraft zu klein geworden ist.',
+    h2Matters: 'Warum das wichtig ist',
+    p9: 'Instead of War behauptet nicht, dass eine Website allein die Welt verändern kann. Aber Sichtbarkeit ist wichtig. Sprache ist wichtig. Der Rahmen ist wichtig. Wenn Menschen die Opportunitätskosten des Krieges klar erkennen können, werden moralische und politische Fragen schwerer zu vermeiden.',
+    p10: 'Dies ist ein Projekt für Menschen, die glauben, dass öffentliches Geld auch eine öffentliche moralische Entscheidung ist. Für Menschen, die Macht nicht nur daran messen wollen, was Staaten zerstören können, sondern auch daran, was die Menschheit schützen, ernähren, heilen und aufbauen kann.',
+    ctaTitle: 'Wenn dieses Projekt etwas in dir bewegt, würde ich gern von dir hören.', ctaBody: 'Instead of War wächst noch. Es braucht Leserinnen und Leser, Verbündete, Journalistinnen und Journalisten, Forschende, Mitwirkende und Menschen, die bereit sind, seiner Botschaft zu helfen, weiter zu reisen.', ctaLink: 'Projekt kontaktieren', footer: 'INSTEAD OF WAR — ERSTELLT VON DAVIDE PARISI', footerContact: 'Kontakt', footerDonate: 'Unterstützen / Spenden'
   },
   pt: {
-    navHome: '← INÍCIO', navRep: '📰 RELATÓRIOS', navGet: '🤝 PARTICIPAR', sub: 'SOBRE O PROJETO', back: '← VOLTAR AO INÍCIO', title: 'SOBRE O PROJETO',
-    body: `
-      <p>Meu nome é Davide Parisi. Não sou acadêmico, nem ativista de profissão. Sou alguém que passou anos trabalhando dentro de sistemas com os quais discordo profundamente, pensando sobre o tipo de mundo que estamos realmente construindo — e o que estamos escolhendo não construir.</p>
-      <p>Este projeto nasceu de uma convicção simples: todo ser humano tem um direito inalienável à dignidade. Não a dignidade como um conceito abstrato, mas como algo concreto: uma moradia decente, alimentação garantida, acesso à educação de qualidade e saúde. Isso não é um privilégio. É a base do que significa ser humano.</p>
-      <p>Os números neste site não são metáforas. Eles são uma escolha que se tornou visível. A cada segundo, a humanidade gasta dinheiro com a guerra — a instituição mais destrutiva e desumana da nossa história — enquanto os recursos necessários para garantir a dignidade a cada pessoa na Terra já existem. Eles apenas estão sendo apontados para a direção errada.</p>
-      <p>Criei isso como uma ferramenta para quem precisa enxergar as coisas com clareza. Se isso mexer com você de alguma forma, eu adoraria ouvir o que tem a dizer.</p>
-      <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
-    `
+    title: 'Sobre o Instead of War | O verdadeiro custo da guerra em tempo real',
+    description: 'Descubra por que nasceu o Instead of War, como o projeto transforma a despesa militar em impacto humano em tempo real e que futuro procura tornar visível.',
+    ogTitle: 'Sobre o Instead of War | O verdadeiro custo da guerra em tempo real',
+    ogDescription: 'Por que existe o Instead of War, como foi construído e por que é importante tornar visível o custo de oportunidade da guerra.',
+    twitterTitle: 'Sobre o Instead of War',
+    twitterDescription: 'Um projeto de vocação pública que mostra o custo humano de oportunidade da despesa militar em tempo real.',
+    navHome: '← INÍCIO', navReports: 'RELATÓRIOS', kicker: 'SOBRE O PROJETO', heroTitle: 'Sobre o Instead of War',
+    heroIntro: 'Instead of War é um projeto com vocação pública que transforma a despesa militar em algo impossível de ignorar: o seu custo humano de oportunidade. Mostra, em tempo real, como o dinheiro gasto na guerra poderia, em vez disso, financiar habitação, alimentação, saúde, educação e adaptação climática.',
+    h2Origin: 'Porque existe este projeto',
+    p1: 'Chamo-me Davide Parisi. Não sou académico nem ativista de profissão. Sou alguém que passou anos a trabalhar dentro de sistemas com os quais discorda no essencial, fazendo a si próprio uma pergunta que nunca o abandonou: que tipo de mundo estamos realmente a construir e que tipo de mundo estamos a escolher não construir?',
+    p2: 'Instead of War nasceu dessa pergunta. Nasceu de uma convicção simples: todo o ser humano tem um direito inalienável à dignidade. Não a dignidade como ideal abstrato, mas como algo material e concreto — uma casa segura, alimentação garantida, educação de qualidade, saúde e as condições básicas para uma vida que não seja definida pela privação.',
+    h2Cost: 'O verdadeiro custo da guerra',
+    p3: 'A ideia central deste projeto é simples: a guerra não é apenas destruição no campo de batalha. A guerra é também a perda de tudo aquilo que esse dinheiro poderia ter construído. A cada segundo, a despesa militar global desvia recursos das necessidades humanas e dirige-os para a destruição organizada. Esse é o verdadeiro custo da guerra, e é isso que este site torna visível.',
+    p4: 'Os números deste site não são metáforas. Não são slogans. São uma tradução em tempo real da despesa militar em possibilidades humanas perdidas. O que poderia ter sido habitação transforma-se em armas. O que poderia ter sido escolas transforma-se em escalada. O que poderia ter sido cuidados de saúde transforma-se em silêncio, atraso e abandono.',
+    h2Built: 'Como o Instead of War foi desenvolvido',
+    p5: 'Este projeto foi desenvolvido de forma independente, passo a passo, com recursos limitados mas com um propósito claro: construir uma ferramenta pública capaz de transformar dados abstratos em clareza moral. Os relatórios e os números anuais tendem a permanecer distantes, técnicos e fáceis de ignorar. Um contador em tempo real muda isso. Torna a escala imediata. Obriga a olhar não apenas para quanto está a ser gasto, mas para aquilo que a humanidade está a escolher não priorizar.',
+    p6: 'Desde o início, o objetivo foi criar algo simples, acessível, multilingue e emocionalmente direto. O site foi pensado para ser compreendido em segundos, mas lembrado durante muito mais tempo. É uma ferramenta de sensibilização, mas também de reflexão, jornalismo, educação e conversa pública.',
+    h2Future: 'O futuro do projeto',
+    p7: 'O futuro do Instead of War depende de até onde esta ideia pode crescer sem perder a sua integridade. Há desafios importantes pela frente: melhorar a metodologia, refinar as comparações, ampliar a cobertura linguística, aprofundar a investigação e construir um apoio ético em torno do projeto para que ele possa continuar independente.',
+    p8: 'Mas o maior desafio não é técnico. É cultural. Vivemos num mundo em que a despesa militar é normalizada, enquanto o sofrimento humano é tratado como inevitável. Este projeto existe para desafiar essa normalização e para perguntar se a nossa imaginação política se tornou demasiado pequena.',
+    h2Matters: 'Porque importa',
+    p9: 'Instead of War não afirma que um site, por si só, possa mudar o mundo. Mas a visibilidade importa. A linguagem importa. O enquadramento importa. Quando as pessoas conseguem ver com clareza o custo de oportunidade da guerra, as questões morais e políticas tornam-se mais difíceis de evitar.',
+    p10: 'Este é um projeto para quem acredita que o dinheiro público também é uma escolha moral pública. É para quem quer medir o poder não apenas pelo que os Estados podem destruir, mas também pelo que a humanidade é capaz de proteger, alimentar, curar e construir.',
+    ctaTitle: 'Se este projeto mexer com algo dentro de ti, gostaria de te ouvir.', ctaBody: 'Instead of War continua a crescer. Precisa de leitores, aliados, jornalistas, investigadores, colaboradores e pessoas dispostas a ajudar a levar a sua mensagem mais longe.', ctaLink: 'Contactar o projeto', footer: 'INSTEAD OF WAR — CRIADO POR DAVIDE PARISI', footerContact: 'Contacto', footerDonate: 'Apoiar / Doar'
   }
 };
-function persistLang() {
-  try { localStorage.setItem('lang', currentLang); } catch (e) {}
+
+function setMeta(name, content) {
+  const el = document.querySelector(`meta[name="${name}"]`);
+  if (el) el.setAttribute('content', content);
 }
-function updateAboutPage() {
-  const lang = aboutI18n[currentLang] ? currentLang : 'en';
-  const t = aboutI18n[lang];
+function setProp(property, content) {
+  const el = document.querySelector(`meta[property="${property}"]`);
+  if (el) el.setAttribute('content', content);
+}
+function applyLanguage(lang) {
+  const t = content[lang] || content.en;
   document.documentElement.lang = lang;
   document.getElementById('langSelect').value = lang;
-  document.getElementById('t-nav-home').innerText = t.navHome;
-  document.getElementById('t-nav-rep').innerText = t.navRep;
-  document.getElementById('t-nav-get').innerText = t.navGet;
-  document.getElementById('t-subtitle').innerText = t.sub;
-  document.getElementById('t-back-home').innerText = t.back;
-  document.getElementById('about-title').innerText = t.title;
-  document.getElementById('about-content').innerHTML = t.body;
+  document.title = t.title;
+  setMeta('description', t.description);
+  setProp('og:title', t.ogTitle);
+  setProp('og:description', t.ogDescription);
+  setMeta('twitter:title', t.twitterTitle);
+  setMeta('twitter:description', t.twitterDescription);
+  document.getElementById('nav-home').textContent = t.navHome;
+  document.getElementById('nav-reports').textContent = t.navReports;
+  document.getElementById('kicker').textContent = t.kicker;
+  document.getElementById('hero-title').textContent = t.heroTitle;
+  document.getElementById('hero-intro').textContent = t.heroIntro;
+  document.getElementById('h2-origin').textContent = t.h2Origin;
+  document.getElementById('p1').textContent = t.p1;
+  document.getElementById('p2').textContent = t.p2;
+  document.getElementById('h2-cost').textContent = t.h2Cost;
+  document.getElementById('p3').textContent = t.p3;
+  document.getElementById('p4').textContent = t.p4;
+  document.getElementById('h2-built').textContent = t.h2Built;
+  document.getElementById('p5').textContent = t.p5;
+  document.getElementById('p6').textContent = t.p6;
+  document.getElementById('h2-future').textContent = t.h2Future;
+  document.getElementById('p7').textContent = t.p7;
+  document.getElementById('p8').textContent = t.p8;
+  document.getElementById('h2-matters').textContent = t.h2Matters;
+  document.getElementById('p9').textContent = t.p9;
+  document.getElementById('p10').textContent = t.p10;
+  document.getElementById('cta-title').textContent = t.ctaTitle;
+  document.getElementById('cta-body').textContent = t.ctaBody;
+  document.getElementById('cta-link').textContent = t.ctaLink;
+  document.getElementById('footer-line').textContent = t.footer;
+  document.getElementById('footer-contact').textContent = t.footerContact;
+  document.getElementById('footer-donate').textContent = t.footerDonate;
+  try { localStorage.setItem('lang', lang); } catch (e) {}
 }
-document.getElementById('langSelect').addEventListener('change', (e) => {
-  currentLang = e.target.value;
-  persistLang();
-  updateAboutPage();
-});
-persistLang();
-updateAboutPage();
+
+document.getElementById('langSelect').addEventListener('change', (e) => applyLanguage(e.target.value));
+applyLanguage(currentLang);
 </script>
 </body>
 </html>
