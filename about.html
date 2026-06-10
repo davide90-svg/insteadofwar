@@ -18,6 +18,7 @@
 <meta name="twitter:description" content="A mission-driven project showing the human opportunity cost of military spending in real time." />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&display=swap');
+
 :root {
   --bg: #000000;
   --red: #ff3333;
@@ -26,7 +27,13 @@
   --surface: #0a0a0a;
   --border: #1f1f1f;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: var(--bg);
   color: var(--white);
@@ -34,10 +41,12 @@ body {
   line-height: 1.75;
   padding: 40px 20px 80px;
 }
+
 .main-wrap {
   max-width: 980px;
   margin: 0 auto;
 }
+
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -46,11 +55,13 @@ body {
   margin-bottom: 44px;
   flex-wrap: wrap;
 }
+
 .nav-left {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
+
 .nav-link {
   display: inline-flex;
   align-items: center;
@@ -66,7 +77,11 @@ body {
   font-size: 0.84rem;
   font-weight: 700;
 }
-.nav-link:hover { border-color: var(--white); }
+
+.nav-link:hover {
+  border-color: var(--white);
+}
+
 select {
   min-height: 44px;
   padding: 10px 14px;
@@ -75,9 +90,11 @@ select {
   border: 1px solid var(--border);
   font-family: 'JetBrains Mono', monospace;
 }
+
 .hero {
   margin-bottom: 42px;
 }
+
 .kicker {
   color: var(--red);
   text-transform: uppercase;
@@ -86,6 +103,7 @@ select {
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
+
 h1 {
   font-size: clamp(2.4rem, 7vw, 4.6rem);
   line-height: 0.95;
@@ -93,38 +111,45 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 18px;
 }
+
 .hero-intro {
   max-width: 760px;
   color: var(--muted);
   font-size: 1.05rem;
 }
+
 .section {
   margin-top: 42px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
 }
+
 h2 {
   font-size: 1.05rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 18px;
 }
+
 p {
   color: var(--muted);
   margin-bottom: 18px;
   font-size: 1rem;
 }
+
 a {
   color: var(--white);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
 .cta-box {
   margin-top: 40px;
   padding: 26px;
   border: 1px solid var(--border);
   background: var(--surface);
 }
+
 .cta-title {
   font-size: 1rem;
   text-transform: uppercase;
@@ -133,6 +158,7 @@ a {
   color: var(--white);
   margin-bottom: 12px;
 }
+
 .cta-link {
   display: inline-flex;
   align-items: center;
@@ -148,26 +174,31 @@ a {
   font-size: 0.82rem;
   font-weight: 800;
 }
+
 .cta-link:hover {
   background: var(--white);
   color: var(--bg);
 }
+
 footer {
   margin-top: 50px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
 }
+
 .footer-line {
   color: #666;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.82rem;
   margin-bottom: 16px;
 }
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
+
 .footer-links a {
   display: inline-flex;
   min-height: 44px;
@@ -182,13 +213,36 @@ footer {
   font-size: 0.8rem;
   font-weight: 700;
 }
-.footer-links a:hover { border-color: var(--white); }
+
+.footer-links a:hover {
+  border-color: var(--white);
+}
+
 @media (max-width: 768px) {
-  body { padding: 24px 16px 60px; }
-  .topbar { flex-direction: column; align-items: stretch; }
-  .nav-left { display: grid; grid-template-columns: 1fr; }
-  .nav-link, .cta-link, select { width: 100%; }
-  .footer-links { display: grid; grid-template-columns: 1fr; }
+  body {
+    padding: 24px 16px 60px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-left {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .nav-link,
+  .cta-link,
+  select {
+    width: 100%;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
@@ -212,7 +266,9 @@ footer {
   <section class="hero">
     <div class="kicker" id="kicker">ABOUT THE PROJECT</div>
     <h1 id="hero-title">About Instead of War</h1>
-    <p class="hero-intro" id="hero-intro">Instead of War is a mission-driven project that turns military spending into something impossible to ignore: human opportunity cost. It shows, in real time, how money spent on war could instead fund housing, food, healthcare, education, and climate adaptation.</p>
+    <p class="hero-intro" id="hero-intro">
+      Instead of War is a mission-driven project that turns military spending into something impossible to ignore: human opportunity cost. It shows, in real time, how money spent on war could instead fund housing, food, healthcare, education, and climate adaptation.
+    </p>
   </section>
 
   <section class="section">
@@ -262,7 +318,11 @@ footer {
 
 <script>
 let currentLang = (() => {
-  try { return localStorage.getItem('lang') || 'en'; } catch (e) { return 'en'; }
+  try {
+    return localStorage.getItem('lang') || 'en';
+  } catch (e) {
+    return 'en';
+  }
 })();
 
 const content = {
@@ -273,7 +333,10 @@ const content = {
     ogDescription: 'Why Instead of War exists, how it was built, and why making the opportunity cost of war visible matters.',
     twitterTitle: 'About Instead of War',
     twitterDescription: 'A mission-driven project showing the human opportunity cost of military spending in real time.',
-    navHome: '← HOME', navReports: 'REPORTS', kicker: 'ABOUT THE PROJECT', heroTitle: 'About Instead of War',
+    navHome: '← HOME',
+    navReports: 'REPORTS',
+    kicker: 'ABOUT THE PROJECT',
+    heroTitle: 'About Instead of War',
     heroIntro: 'Instead of War is a mission-driven project that turns military spending into something impossible to ignore: human opportunity cost. It shows, in real time, how money spent on war could instead fund housing, food, healthcare, education, and climate adaptation.',
     h2Origin: 'Why this project exists',
     p1: 'My name is Davide Parisi. I’m not an academic, and I’m not an activist by profession. I’m someone who has spent years working inside systems I fundamentally disagree with, asking a question that has never left me: what kind of world are we actually building, and what kind of world are we choosing not to build?',
@@ -290,7 +353,12 @@ const content = {
     h2Matters: 'Why it matters',
     p9: 'Instead of War is not claiming that a website alone can change the world. But visibility matters. Language matters. Framing matters. When people can clearly see the opportunity cost of war, new moral and political questions become harder to avoid.',
     p10: 'This is a project for people who believe that public money is also a public moral choice. It is for people who want to measure power not only by what states can destroy, but by what humanity is capable of protecting, feeding, healing, and building.',
-    ctaTitle: 'If this project moves something in you, I would like to hear from you.', ctaBody: 'Instead of War is still growing. It needs readers, allies, journalists, researchers, collaborators, and people willing to help make its message travel further.', ctaLink: 'Contact the project', footer: 'INSTEAD OF WAR — CREATED BY DAVIDE PARISI', footerContact: 'Contact', footerDonate: 'Support / Donate'
+    ctaTitle: 'If this project moves something in you, I would like to hear from you.',
+    ctaBody: 'Instead of War is still growing. It needs readers, allies, journalists, researchers, collaborators, and people willing to help make its message travel further.',
+    ctaLink: 'Contact the project',
+    footer: 'INSTEAD OF WAR — CREATED BY DAVIDE PARISI',
+    footerContact: 'Contact',
+    footerDonate: 'Support / Donate'
   },
   es: {
     title: 'Sobre Instead of War | El verdadero coste de la guerra en tiempo real',
@@ -299,7 +367,10 @@ const content = {
     ogDescription: 'Por qué existe Instead of War, cómo se ha construido y por qué importa hacer visible el coste de oportunidad de la guerra.',
     twitterTitle: 'Sobre Instead of War',
     twitterDescription: 'Un proyecto con vocación pública que muestra el coste humano de oportunidad del gasto militar en tiempo real.',
-    navHome: '← INICIO', navReports: 'INFORMES', kicker: 'SOBRE EL PROYECTO', heroTitle: 'Sobre Instead of War',
+    navHome: '← INICIO',
+    navReports: 'INFORMES',
+    kicker: 'SOBRE EL PROYECTO',
+    heroTitle: 'Sobre Instead of War',
     heroIntro: 'Instead of War es un proyecto con vocación pública que convierte el gasto militar en algo imposible de ignorar: su coste de oportunidad humano. Muestra, en tiempo real, cómo el dinero destinado a la guerra podría financiar vivienda, alimentación, sanidad, educación y adaptación climática.',
     h2Origin: 'Por qué existe este proyecto',
     p1: 'Me llamo Davide Parisi. No soy académico ni activista de profesión. Soy una persona que ha pasado años trabajando dentro de sistemas con los que no está de acuerdo en lo esencial, haciéndose una pregunta que nunca ha dejado de acompañarle: qué tipo de mundo estamos construyendo realmente y qué tipo de mundo estamos eligiendo no construir.',
@@ -316,16 +387,24 @@ const content = {
     h2Matters: 'Por qué importa',
     p9: 'Instead of War no afirma que una web por sí sola pueda cambiar el mundo. Pero la visibilidad importa. El lenguaje importa. El marco importa. Cuando las personas pueden ver con claridad el coste de oportunidad de la guerra, las preguntas morales y políticas se vuelven más difíciles de esquivar.',
     p10: 'Este es un proyecto para quienes creen que el dinero público también es una elección moral pública. Es para quienes quieren medir el poder no solo por lo que los Estados pueden destruir, sino por lo que la humanidad es capaz de proteger, alimentar, sanar y construir.',
-    ctaTitle: 'Si este proyecto te mueve por dentro, me gustaría escucharte.', ctaBody: 'Instead of War sigue creciendo. Necesita lectores, aliados, periodistas, investigadores, colaboradores y personas dispuestas a ayudar a que su mensaje llegue más lejos.', ctaLink: 'Contactar con el proyecto', footer: 'INSTEAD OF WAR — CREADO POR DAVIDE PARISI', footerContact: 'Contacto', footerDonate: 'Apoyar / Donar'
+    ctaTitle: 'Si este proyecto te mueve por dentro, me gustaría escucharte.',
+    ctaBody: 'Instead of War sigue creciendo. Necesita lectores, aliados, periodistas, investigadores, colaboradores y personas dispuestas a ayudar a que su mensaje llegue más lejos.',
+    ctaLink: 'Contactar con el proyecto',
+    footer: 'INSTEAD OF WAR — CREADO POR DAVIDE PARISI',
+    footerContact: 'Contacto',
+    footerDonate: 'Apoyar / Donar'
   },
   it: {
     title: 'Chi è Instead of War | Il vero costo della guerra in tempo reale',
     description: 'Scopri perché è nato Instead of War, come trasforma la spesa militare in impatto umano in tempo reale e quale futuro cerca di rendere visibile.',
-    ogTitle: 'Cos'è Instead of War | Il vero costo della guerra in tempo reale',
+    ogTitle: 'Chi è Instead of War | Il vero costo della guerra in tempo reale',
     ogDescription: 'Perché esiste Instead of War, come è stato costruito e perché rendere visibile il costo opportunità della guerra è importante.',
     twitterTitle: 'Chi è Instead of War',
     twitterDescription: 'Un progetto con una missione pubblica che mostra il costo umano di opportunità della spesa militare in tempo reale.',
-    navHome: '← HOME', navReports: 'REPORT', kicker: 'IL PROGETTO', heroTitle: 'Chi è Instead of War',
+    navHome: '← HOME',
+    navReports: 'REPORT',
+    kicker: 'IL PROGETTO',
+    heroTitle: 'Chi è Instead of War',
     heroIntro: 'Instead of War è un progetto con una missione precisa: trasformare la spesa militare in qualcosa di impossibile da ignorare, il suo costo umano di opportunità. Mostra in tempo reale come il denaro destinato alla guerra potrebbe invece finanziare casa, cibo, sanità, istruzione e adattamento climatico.',
     h2Origin: 'Perché esiste questo progetto',
     p1: 'Mi chiamo Davide Parisi. Non sono un accademico e non sono un attivista di professione. Sono una persona che ha trascorso anni a lavorare dentro sistemi con cui non è d’accordo nella sostanza, portandosi dietro una domanda che non lo ha mai lasciato: che tipo di mondo stiamo davvero costruendo e quale stiamo scegliendo di non costruire?',
@@ -342,7 +421,12 @@ const content = {
     h2Matters: 'Perché conta',
     p9: 'Instead of War non sostiene che un sito web da solo possa cambiare il mondo. Ma la visibilità conta. Il linguaggio conta. Il modo in cui incorniciamo le cose conta. Quando le persone possono vedere con chiarezza il costo di opportunità della guerra, le domande morali e politiche diventano più difficili da evitare.',
     p10: 'Questo è un progetto per chi crede che il denaro pubblico sia anche una scelta morale pubblica. È per chi vuole misurare il potere non solo da ciò che gli Stati possono distruggere, ma da ciò che l’umanità è capace di proteggere, nutrire, curare e costruire.',
-    ctaTitle: 'Se questo progetto muove qualcosa dentro di te, mi piacerebbe ascoltarti.', ctaBody: 'Instead of War è ancora in crescita. Ha bisogno di lettori, alleati, giornalisti, ricercatori, collaboratori e persone disposte ad aiutare il suo messaggio a viaggiare più lontano.', ctaLink: 'Contatta il progetto', footer: 'INSTEAD OF WAR — CREATO DA DAVIDE PARISI', footerContact: 'Contatto', footerDonate: 'Sostieni / Dona'
+    ctaTitle: 'Se questo progetto muove qualcosa dentro di te, mi piacerebbe ascoltarti.',
+    ctaBody: 'Instead of War è ancora in crescita. Ha bisogno di lettori, alleati, giornalisti, ricercatori, collaboratori e persone disposte ad aiutare il suo messaggio a viaggiare più lontano.',
+    ctaLink: 'Contatta il progetto',
+    footer: 'INSTEAD OF WAR — CREATO DA DAVIDE PARISI',
+    footerContact: 'Contatto',
+    footerDonate: 'Sostieni / Dona'
   },
   fr: {
     title: 'À propos de Instead of War | Le vrai coût de la guerre en temps réel',
@@ -351,7 +435,10 @@ const content = {
     ogDescription: 'Pourquoi Instead of War existe, comment il a été construit et pourquoi rendre visible le coût d’opportunité de la guerre est essentiel.',
     twitterTitle: 'À propos de Instead of War',
     twitterDescription: 'Un projet à vocation publique qui montre le coût humain d’opportunité des dépenses militaires en temps réel.',
-    navHome: '← ACCUEIL', navReports: 'RAPPORTS', kicker: 'À PROPOS DU PROJET', heroTitle: 'À propos de Instead of War',
+    navHome: '← ACCUEIL',
+    navReports: 'RAPPORTS',
+    kicker: 'À PROPOS DU PROJET',
+    heroTitle: 'À propos de Instead of War',
     heroIntro: 'Instead of War est un projet à vocation publique qui transforme les dépenses militaires en quelque chose d’impossible à ignorer : leur coût humain d’opportunité. Il montre, en temps réel, comment l’argent consacré à la guerre pourrait financer le logement, l’alimentation, la santé, l’éducation et l’adaptation climatique.',
     h2Origin: 'Pourquoi ce projet existe',
     p1: 'Je m’appelle Davide Parisi. Je ne suis ni universitaire ni militant de profession. Je suis une personne qui a passé des années à travailler au sein de systèmes avec lesquels elle est fondamentalement en désaccord, en portant avec elle une question qui ne l’a jamais quittée : quel monde sommes-nous réellement en train de construire, et quel monde choisissons-nous de ne pas construire ?',
@@ -368,7 +455,12 @@ const content = {
     h2Matters: 'Pourquoi cela compte',
     p9: 'Instead of War ne prétend pas qu’un site web puisse, à lui seul, changer le monde. Mais la visibilité compte. Les mots comptent. Le cadrage compte. Lorsque les gens peuvent voir clairement le coût d’opportunité de la guerre, les questions morales et politiques deviennent plus difficiles à éviter.',
     p10: 'C’est un projet pour celles et ceux qui croient que l’argent public est aussi un choix moral public. Pour celles et ceux qui veulent mesurer la puissance non seulement à ce que les États peuvent détruire, mais aussi à ce que l’humanité est capable de protéger, nourrir, soigner et construire.',
-    ctaTitle: 'Si ce projet fait naître quelque chose en vous, j’aimerais vous lire.', ctaBody: 'Instead of War continue de grandir. Il a besoin de lecteurs, d’alliés, de journalistes, de chercheurs, de collaborateurs et de personnes prêtes à aider son message à aller plus loin.', ctaLink: 'Contacter le projet', footer: 'INSTEAD OF WAR — CRÉÉ PAR DAVIDE PARISI', footerContact: 'Contact', footerDonate: 'Soutenir / Donner'
+    ctaTitle: 'Si ce projet fait naître quelque chose en vous, j’aimerais vous lire.',
+    ctaBody: 'Instead of War continue de grandir. Il a besoin de lecteurs, d’alliés, de journalistes, de chercheurs, de collaborateurs et de personnes prêtes à aider son message à aller plus loin.',
+    ctaLink: 'Contacter le projet',
+    footer: 'INSTEAD OF WAR — CRÉÉ PAR DAVIDE PARISI',
+    footerContact: 'Contact',
+    footerDonate: 'Soutenir / Donner'
   },
   de: {
     title: 'Über Instead of War | Die wahren Kosten des Krieges in Echtzeit',
@@ -377,7 +469,10 @@ const content = {
     ogDescription: 'Warum Instead of War existiert, wie es aufgebaut wurde und weshalb es wichtig ist, die Opportunitätskosten des Krieges sichtbar zu machen.',
     twitterTitle: 'Über Instead of War',
     twitterDescription: 'Ein öffentlich ausgerichtetes Projekt, das die menschlichen Opportunitätskosten von Militärausgaben in Echtzeit sichtbar macht.',
-    navHome: '← STARTSEITE', navReports: 'BERICHTE', kicker: 'ÜBER DAS PROJEKT', heroTitle: 'Über Instead of War',
+    navHome: '← STARTSEITE',
+    navReports: 'BERICHTE',
+    kicker: 'ÜBER DAS PROJEKT',
+    heroTitle: 'Über Instead of War',
     heroIntro: 'Instead of War ist ein Projekt mit einer klaren Mission: Militärausgaben in etwas zu verwandeln, das unmöglich zu ignorieren ist — in ihre menschlichen Opportunitätskosten. Es zeigt in Echtzeit, wie Geld, das für Krieg ausgegeben wird, stattdessen Wohnen, Nahrung, Gesundheit, Bildung und Klimaanpassung finanzieren könnte.',
     h2Origin: 'Warum dieses Projekt existiert',
     p1: 'Mein Name ist Davide Parisi. Ich bin weder Akademiker noch beruflich Aktivist. Ich bin jemand, der Jahre innerhalb von Systemen verbracht hat, mit denen er im Kern nicht einverstanden ist, und der dabei eine Frage nie mehr losgeworden ist: Welche Art von Welt bauen wir tatsächlich auf — und welche Art von Welt entscheiden wir uns, nicht aufzubauen?',
@@ -394,7 +489,12 @@ const content = {
     h2Matters: 'Warum das wichtig ist',
     p9: 'Instead of War behauptet nicht, dass eine Website allein die Welt verändern kann. Aber Sichtbarkeit ist wichtig. Sprache ist wichtig. Der Rahmen ist wichtig. Wenn Menschen die Opportunitätskosten des Krieges klar erkennen können, werden moralische und politische Fragen schwerer zu vermeiden.',
     p10: 'Dies ist ein Projekt für Menschen, die glauben, dass öffentliches Geld auch eine öffentliche moralische Entscheidung ist. Für Menschen, die Macht nicht nur daran messen wollen, was Staaten zerstören können, sondern auch daran, was die Menschheit schützen, ernähren, heilen und aufbauen kann.',
-    ctaTitle: 'Wenn dieses Projekt etwas in dir bewegt, würde ich gern von dir hören.', ctaBody: 'Instead of War wächst noch. Es braucht Leserinnen und Leser, Verbündete, Journalistinnen und Journalisten, Forschende, Mitwirkende und Menschen, die bereit sind, seiner Botschaft zu helfen, weiter zu reisen.', ctaLink: 'Projekt kontaktieren', footer: 'INSTEAD OF WAR — ERSTELLT VON DAVIDE PARISI', footerContact: 'Kontakt', footerDonate: 'Unterstützen / Spenden'
+    ctaTitle: 'Wenn dieses Projekt etwas in dir bewegt, würde ich gern von dir hören.',
+    ctaBody: 'Instead of War wächst noch. Es braucht Leserinnen und Leser, Verbündete, Journalistinnen und Journalisten, Forschende, Mitwirkende und Menschen, die bereit sind, seiner Botschaft zu helfen, weiter zu reisen.',
+    ctaLink: 'Projekt kontaktieren',
+    footer: 'INSTEAD OF WAR — ERSTELLT VON DAVIDE PARISI',
+    footerContact: 'Kontakt',
+    footerDonate: 'Unterstützen / Spenden'
   },
   pt: {
     title: 'Sobre o Instead of War | O verdadeiro custo da guerra em tempo real',
@@ -403,7 +503,10 @@ const content = {
     ogDescription: 'Por que existe o Instead of War, como foi construído e por que é importante tornar visível o custo de oportunidade da guerra.',
     twitterTitle: 'Sobre o Instead of War',
     twitterDescription: 'Um projeto de vocação pública que mostra o custo humano de oportunidade da despesa militar em tempo real.',
-    navHome: '← INÍCIO', navReports: 'RELATÓRIOS', kicker: 'SOBRE O PROJETO', heroTitle: 'Sobre o Instead of War',
+    navHome: '← INÍCIO',
+    navReports: 'RELATÓRIOS',
+    kicker: 'SOBRE O PROJETO',
+    heroTitle: 'Sobre o Instead of War',
     heroIntro: 'Instead of War é um projeto com vocação pública que transforma a despesa militar em algo impossível de ignorar: o seu custo humano de oportunidade. Mostra, em tempo real, como o dinheiro gasto na guerra poderia, em vez disso, financiar habitação, alimentação, saúde, educação e adaptação climática.',
     h2Origin: 'Porque existe este projeto',
     p1: 'Chamo-me Davide Parisi. Não sou académico nem ativista de profissão. Sou alguém que passou anos a trabalhar dentro de sistemas com os quais discorda no essencial, fazendo a si próprio uma pergunta que nunca o abandonou: que tipo de mundo estamos realmente a construir e que tipo de mundo estamos a escolher não construir?',
@@ -420,28 +523,38 @@ const content = {
     h2Matters: 'Porque importa',
     p9: 'Instead of War não afirma que um site, por si só, possa mudar o mundo. Mas a visibilidade importa. A linguagem importa. O enquadramento importa. Quando as pessoas conseguem ver com clareza o custo de oportunidade da guerra, as questões morais e políticas tornam-se mais difíceis de evitar.',
     p10: 'Este é um projeto para quem acredita que o dinheiro público também é uma escolha moral pública. É para quem quer medir o poder não apenas pelo que os Estados podem destruir, mas também pelo que a humanidade é capaz de proteger, alimentar, curar e construir.',
-    ctaTitle: 'Se este projeto mexer com algo dentro de ti, gostaria de te ouvir.', ctaBody: 'Instead of War continua a crescer. Precisa de leitores, aliados, jornalistas, investigadores, colaboradores e pessoas dispostas a ajudar a levar a sua mensagem mais longe.', ctaLink: 'Contactar o projeto', footer: 'INSTEAD OF WAR — CRIADO POR DAVIDE PARISI', footerContact: 'Contacto', footerDonate: 'Apoiar / Doar'
+    ctaTitle: 'Se este projeto mexer com algo dentro de ti, gostaria de te ouvir.',
+    ctaBody: 'Instead of War continua a crescer. Precisa de leitores, aliados, jornalistas, investigadores, colaboradores e pessoas dispostas a ajudar a levar a sua mensagem mais longe.',
+    ctaLink: 'Contactar o projeto',
+    footer: 'INSTEAD OF WAR — CRIADO POR DAVIDE PARISI',
+    footerContact: 'Contacto',
+    footerDonate: 'Apoiar / Doar'
   }
 };
 
-function setMeta(name, content) {
+function setMeta(name, value) {
   const el = document.querySelector(`meta[name="${name}"]`);
-  if (el) el.setAttribute('content', content);
+  if (el) el.setAttribute('content', value);
 }
-function setProp(property, content) {
+
+function setProp(property, value) {
   const el = document.querySelector(`meta[property="${property}"]`);
-  if (el) el.setAttribute('content', content);
+  if (el) el.setAttribute('content', value);
 }
+
 function applyLanguage(lang) {
   const t = content[lang] || content.en;
+
   document.documentElement.lang = lang;
   document.getElementById('langSelect').value = lang;
+
   document.title = t.title;
   setMeta('description', t.description);
   setProp('og:title', t.ogTitle);
   setProp('og:description', t.ogDescription);
   setMeta('twitter:title', t.twitterTitle);
   setMeta('twitter:description', t.twitterDescription);
+
   document.getElementById('nav-home').textContent = t.navHome;
   document.getElementById('nav-reports').textContent = t.navReports;
   document.getElementById('kicker').textContent = t.kicker;
@@ -468,10 +581,16 @@ function applyLanguage(lang) {
   document.getElementById('footer-line').textContent = t.footer;
   document.getElementById('footer-contact').textContent = t.footerContact;
   document.getElementById('footer-donate').textContent = t.footerDonate;
-  try { localStorage.setItem('lang', lang); } catch (e) {}
+
+  try {
+    localStorage.setItem('lang', lang);
+  } catch (e) {}
 }
 
-document.getElementById('langSelect').addEventListener('change', (e) => applyLanguage(e.target.value));
+document.getElementById('langSelect').addEventListener('change', function (e) {
+  applyLanguage(e.target.value);
+});
+
 applyLanguage(currentLang);
 </script>
 </body>
