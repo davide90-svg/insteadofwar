@@ -92,11 +92,6 @@ select:hover { border-color: var(--muted); }
   margin-bottom: 18px;
   font-size: 1.05rem;
 }
-.about-content p.lead {
-  color: var(--white);
-  font-weight: 700;
-  opacity: 1;
-}
 .about-content a {
   color: var(--white);
   text-decoration: underline;
@@ -152,9 +147,12 @@ let currentLang = (() => {
 
 const aboutI18n = {
   en: {
-    navRep: '📰 REPORTS', navGet: '🤝 GET INVOLVED', sub: 'ABOUT THE PROJECT', back: '← BACK HOME', title: 'ABOUT',
+    navRep: '📰 REPORTS',
+    navGet: '🤝 GET INVOLVED',
+    sub: 'ABOUT THE PROJECT',
+    back: '← BACK HOME',
+    title: 'ABOUT',
     body: `
-      <p class="lead">Who is behind this</p>
       <p>My name is Davide Parisi. I'm not an academic, nor an activist by profession. I'm someone who has spent years working inside systems I fundamentally disagree with, thinking about what kind of world we're actually building — and what we're choosing not to build.</p>
       <p>This project was born from a simple conviction: every human being has an unalienable right to dignity. Not dignity as an abstract concept, but as something concrete — a decent home, guaranteed food, access to quality education, and healthcare. These aren't privileges. They're the baseline of what it means to be human.</p>
       <p>The numbers on this site are not metaphors. They are a choice made visible. Every second, humanity spends money on war — the most destructive and inhumane institution in our history — while the resources needed to guarantee dignity to every person on earth already exist. They are simply pointed in the wrong direction.</p>
@@ -163,57 +161,72 @@ const aboutI18n = {
     `
   },
   es: {
-    navRep: '📰 REPORTAJES', navGet: '🤝 PARTICIPA', sub: 'SOBRE EL PROYECTO', back: '← VOLVER AL INICIO', title: 'SOBRE EL PROYECTO',
+    navRep: '📰 REPORTAJES',
+    navGet: '🤝 PARTICIPA',
+    sub: 'SOBRE EL PROYECTO',
+    back: '← VOLVER AL INICIO',
+    title: 'SOBRE EL PROYECTO',
     body: `
-      <p class="lead">Quién está detrás de esto</p>
-      <p>Me llamo Davide Parisi. No soy académico ni activista de profesión. Soy alguien que ha pasado años trabajando dentro de sistemas con los que fundamentalmente no está de acuerdo, pensando en qué tipo de mundo estamos construyendo realmente — y cuál estamos eligiendo no construir.</p>
-      <p>Este proyecto nació de una convicción simple: todo ser humano tiene un derecho inalienable a la dignidad. No la dignidad como concepto abstracto, sino como algo concreto — una vivienda digna, comida garantizada, acceso a una educación de calidad y atención sanitaria. No son privilegios. Son la base mínima de lo que significa ser humano.</p>
-      <p>Los números de este sitio no son metáforas. Son una elección hecha visible. Cada segundo, la humanidad gasta dinero en la guerra — la institución más destructiva e inhumana de nuestra historia — mientras los recursos necesarios para garantizar dignidad a cada persona en la tierra ya existen. Simplemente están dirigidos en la dirección equivocada.</p>
-      <p>Construí esto como una herramienta para quienes necesitan verlo con claridad. Si algo de esto te mueve, me gustaría escucharte.</p>
+      <p>Me llamo Davide Parisi. No soy académico, ni activista de profesión. Soy alguien que ha pasado años trabajando dentro de sistemas con los que discrepo profundamente, reflexionando sobre el tipo de mundo que estamos construyendo de verdad, y el que estamos eligiendo no construir.</p>
+      <p>Este proyecto nace de una convicción muy sencilla: todo ser humano tiene un derecho inalienable a la dignidad. No a una dignidad entendida como un concepto abstracto, sino como una realidad tangible: un hogar en condiciones, comida garantizada, acceso a una educación de calidad y atención médica. No son privilegios. Son la base misma de lo que significa ser humano.</p>
+      <p>Las cifras de esta página no son metáforas; son una elección que se ha hecho visible. Cada segundo, la humanidad gasta dinero en la guerra —la institución más destructiva e inhumana de nuestra historia— mientras que los recursos necesarios para garantizar la dignidad de cada persona del planeta ya existen. Simplemente están apuntando en la dirección equivocada.</p>
+      <p>He creado esto como una herramienta para quienes necesitan verlo con claridad. Si esto resuena contigo, me encantaría contactes conmigo.</p>
       <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
     `
   },
   it: {
-    navRep: '📰 REPORT', navGet: '🤝 PARTECIPA', sub: 'SUL PROGETTO', back: '← TORNA ALLA HOME', title: 'CHI SIAMO',
+    navRep: '📰 REPORT',
+    navGet: '🤝 PARTECIPA',
+    sub: 'SUL PROGETTO',
+    back: '← TORNA ALLA HOME',
+    title: 'CHI SIAMO',
     body: `
-      <p class="lead">Chi c'è dietro questo</p>
-      <p>Mi chiamo Davide Parisi. Non sono un accademico né un attivista di professione. Sono una persona che ha trascorso anni a lavorare all'interno di sistemi con cui sono profondamente in disaccordo, riflettendo sul tipo di mondo che stiamo davvero costruendo — e su quello che stiamo scegliendo di non costruire.</p>
-      <p>Questo progetto è nato da una convinzione semplice: ogni essere umano ha un diritto inalienabile alla dignità. Non la dignità come concetto astratto, ma come qualcosa di concreto — una casa dignitosa, cibo garantito, accesso a un'istruzione di qualità e assistenza sanitaria. Questi non sono privilegi. Sono la base minima di ciò che significa essere umani.</p>
-      <p>I numeri di questo sito non sono metafore. Sono una scelta resa visibile. Ogni secondo, l'umanità spende denaro per la guerra — l'istituzione più distruttiva e disumana della nostra storia — mentre le risorse necessarie per garantire dignità a ogni persona sulla terra esistono già. Sono semplicemente dirette nella direzione sbagliata.</p>
-      <p>Ho costruito questo come uno strumento per chi ha bisogno di vederlo con chiarezza. Se qualcosa qui dentro ti smuove, mi piacerebbe sentirti.</p>
+      <p>Mi chiamo Davide Parisi. Non sono un accademico, né un attivista di professione. Sono una persona che ha trascorso anni a lavorare all'interno di sistemi che non condivide affatto, riflettendo su che tipo di mondo stiamo realmente costruendo — e su cosa, invece, stiamo scegliendo di non costruire.</p>
+      <p>Questo progetto nasce da una semplice convinzione: ogni essere umano ha un diritto inalienabile alla dignità. Non la dignità come concetto astratto, ma come qualcosa di concreto: una casa dignitosa, cibo garantito, accesso a un'istruzione di qualità e alle cure mediche. Questi non sono privilegi. Sono le basi stesse di ciò che significa essere umani.</p>
+      <p>I numeri su questo sito non sono metafore. Sono una scelta resa visibile. Ogni secondo, l'umanità spende denaro per la guerra — l'istituzione più distruttiva e disumana della nostra storia — mentre le risorse necessarie per garantire dignità a ogni persona sulla terra esistono già. Sono semplicemente puntate nella direzione sbagliata.</p>
+      <p>Ho costruito tutto questo come strumento per chi ha bisogno di vederci chiaro. Se smuove qualcosa dentro di te, mi farebbe piacere ascoltarti.</p>
       <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
     `
   },
   fr: {
-    navRep: '📰 RAPPORTS', navGet: '🤝 PARTICIPER', sub: 'À PROPOS DU PROJET', back: '← RETOUR À L’ACCUEIL', title: 'À PROPOS',
+    navRep: '📰 RAPPORTS',
+    navGet: '🤝 PARTICIPER',
+    sub: 'À PROPOS DU PROJET',
+    back: '← RETOUR À L’ACCUEIL',
+    title: 'À PROPOS',
     body: `
-      <p class="lead">Qui se cache derrière cela</p>
-      <p>Je m'appelle Davide Parisi. Je ne suis ni universitaire ni activiste de profession. Je suis quelqu'un qui a passé des années à travailler à l'intérieur de systèmes avec lesquels il est fondamentalement en désaccord, en réfléchissant au type de monde que nous construisons réellement — et à celui que nous choisissons de ne pas construire.</p>
-      <p>Ce projet est né d'une conviction simple : chaque être humain a un droit inaliénable à la dignité. Non pas la dignité comme concept abstrait, mais comme quelque chose de concret — un logement décent, une alimentation garantie, l'accès à une éducation de qualité et aux soins de santé. Ce ne sont pas des privilèges. C'est la base minimale de ce que signifie être humain.</p>
-      <p>Les chiffres de ce site ne sont pas des métaphores. Ils rendent visible un choix. Chaque seconde, l'humanité dépense de l'argent pour la guerre — l'institution la plus destructrice et la plus inhumaine de notre histoire — alors que les ressources nécessaires pour garantir la dignité de chaque personne sur terre existent déjà. Elles sont simplement dirigées dans la mauvaise direction.</p>
-      <p>J'ai construit cela comme un outil pour celles et ceux qui ont besoin de le voir clairement. Si quelque chose ici vous touche, j'aimerais vous entendre.</p>
+      <p>Je m'appelle Davide Parisi. Je ne suis ni universitaire, ni militant de profession. Je suis quelqu'un qui a passé des années à travailler au cœur de systèmes avec lesquels je suis fondamentalement en désaccord, tout en réfléchissant au monde que nous sommes en train de bâtir — et à celui que nous choisissons d'ignorer.</p>
+      <p>Ce projet est né d'une conviction simple : tout être humain a un droit inaliénable à la dignité. Pas une dignité abstraite, mais une réalité concrète : un logement décent, de la nourriture garantie, l'accès à une éducation de qualité et à des soins de santé. Ce ne sont pas des privilèges. C'est le fondement même de la condition humaine.</p>
+      <p>Les chiffres que vous voyez sur ce site ne sont pas des métaphores. Ils rendent un choix visible. Chaque seconde, l'humanité dépense de l'argent pour la guerre — l'institution la plus destructrice et la plus inhumaine de notre histoire — alors que les ressources nécessaires pour garantir la dignité de chaque personne sur terre existent déjà. Elles sont simplement dirigées vers la mauvaise cible.</p>
+      <p>J'ai conçu ce projet comme un outil pour ceux qui ont besoin de voir les choses clairement. Si cela résonne en vous, j'aimerais beaucoup avoir de vos nouvelles.</p>
       <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
     `
   },
   de: {
-    navRep: '📰 BERICHTE', navGet: '🤝 MITMACHEN', sub: 'ÜBER DAS PROJEKT', back: '← ZURÜCK ZUR STARTSEITE', title: 'ÜBER DAS PROJEKT',
+    navRep: '📰 BERICHTE',
+    navGet: '🤝 MITMACHEN',
+    sub: 'ÜBER DAS PROJEKT',
+    back: '← ZURÜCK ZUR STARTSEITE',
+    title: 'ÜBER DAS PROJEKT',
     body: `
-      <p class="lead">Wer steckt dahinter</p>
-      <p>Mein Name ist Davide Parisi. Ich bin weder Akademiker noch Aktivist von Beruf. Ich bin jemand, der Jahre damit verbracht hat, innerhalb von Systemen zu arbeiten, mit denen ich grundlegend nicht einverstanden bin, und darüber nachzudenken, welche Art von Welt wir tatsächlich aufbauen — und welche wir bewusst nicht aufbauen.</p>
-      <p>Dieses Projekt entstand aus einer einfachen Überzeugung: Jeder Mensch hat ein unveräußerliches Recht auf Würde. Nicht Würde als abstraktes Konzept, sondern als etwas Konkretes — ein anständiges Zuhause, gesicherte Nahrung, Zugang zu hochwertiger Bildung und Gesundheitsversorgung. Das sind keine Privilegien. Das ist die Mindestgrundlage dessen, was es bedeutet, Mensch zu sein.</p>
-      <p>Die Zahlen auf dieser Website sind keine Metaphern. Sie machen eine Entscheidung sichtbar. Jede Sekunde gibt die Menschheit Geld für Krieg aus — die zerstörerischste und unmenschlichste Institution unserer Geschichte — während die Ressourcen, die nötig wären, um jedem Menschen auf der Erde Würde zu garantieren, bereits existieren. Sie sind lediglich in die falsche Richtung gelenkt.</p>
-      <p>Ich habe dies als Werkzeug für diejenigen gebaut, die es klar sehen müssen. Wenn dich etwas davon berührt, würde ich gerne von dir hören.</p>
+      <p>Mein Name ist Davide Parisi. Ich bin weder Akademiker noch von Beruf Aktivist. Ich bin jemand, der jahrelang in Systemen gearbeitet hat, die er im Grunde ablehnt, und der darüber nachgedacht hat, was für eine Welt wir eigentlich aufbauen – und worauf wir uns entscheiden, zu verzichten.</p>
+      <p>Dieses Projekt entstand aus einer einfachen Überzeugung: Jeder Mensch hat ein unveräußerliches Recht auf Würde. Keine Würde als abstraktes Konzept, sondern als etwas Handfestes – ein anständiges Zuhause, garantierte Ernährung, Zugang zu hochwertiger Bildung und Gesundheitsversorgung. Das sind keine Privilegien. Sie sind das Fundament des Menschseins.</p>
+      <p>Die Zahlen auf dieser Website sind keine Metaphern. Sie machen eine Entscheidung sichtbar. In jeder Sekunde gibt die Menschheit Geld für den Krieg aus – die zerstörerischste und unmenschlichste Institution unserer Geschichte –, während die Ressourcen, die nötig wären, um jedem Menschen auf der Erde ein würdevolles Leben zu garantieren, längst vorhanden sind. Sie werden nur in die falsche Richtung gelenkt.</p>
+      <p>Ich habe dies als Werkzeug für all jene entwickelt, die es klar vor Augen haben müssen. Wenn es in dir etwas bewegt, würde ich mich freuen, von dir zu hören.</p>
       <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
     `
   },
   pt: {
-    navRep: '📰 RELATÓRIOS', navGet: '🤝 PARTICIPAR', sub: 'SOBRE O PROJETO', back: '← VOLTAR AO INÍCIO', title: 'SOBRE O PROJETO',
+    navRep: '📰 RELATÓRIOS',
+    navGet: '🤝 PARTICIPAR',
+    sub: 'SOBRE O PROJETO',
+    back: '← VOLTAR AO INÍCIO',
+    title: 'SOBRE O PROJETO',
     body: `
-      <p class="lead">Quem está por trás disto</p>
-      <p>O meu nome é Davide Parisi. Não sou académico nem ativista de profissão. Sou alguém que passou anos a trabalhar dentro de sistemas com os quais discordo profundamente, pensando sobre o tipo de mundo que estamos realmente a construir — e aquele que estamos a escolher não construir.</p>
-      <p>Este projeto nasceu de uma convicção simples: todo o ser humano tem um direito inalienável à dignidade. Não a dignidade como um conceito abstrato, mas como algo concreto — uma casa digna, alimentação garantida, acesso a educação de qualidade e cuidados de saúde. Estes não são privilégios. São a base mínima do que significa ser humano.</p>
-      <p>Os números neste site não são metáforas. São uma escolha tornada visível. A cada segundo, a humanidade gasta dinheiro na guerra — a instituição mais destrutiva e desumana da nossa história — enquanto os recursos necessários para garantir dignidade a cada pessoa na Terra já existem. Estão simplesmente apontados na direção errada.</p>
-      <p>Construí isto como uma ferramenta para quem precisa de ver isto com clareza. Se algo aqui te tocar, gostaria de ouvir-te.</p>
+      <p>Meu nome é Davide Parisi. Não sou acadêmico, nem ativista de profissão. Sou alguém que passou anos trabalhando dentro de sistemas com os quais discordo profundamente, pensando sobre o tipo de mundo que estamos realmente construindo — e o que estamos escolhendo não construir.</p>
+      <p>Este projeto nasceu de uma convicção simples: todo ser humano tem um direito inalienável à dignidade. Não a dignidade como um conceito abstrato, mas como algo concreto: uma moradia decente, alimentação garantida, acesso à educação de qualidade e saúde. Isso não é um privilégio. É a base do que significa ser humano.</p>
+      <p>Os números neste site não são metáforas. Eles são uma escolha que se tornou visível. A cada segundo, a humanidade gasta dinheiro com a guerra — a instituição mais destrutiva e desumana da nossa história — enquanto os recursos necessários para garantir a dignidade a cada pessoa na Terra já existem. Eles apenas estão sendo apontados para a direção errada.</p>
+      <p>Criei isso como uma ferramenta para quem precisa enxergar as coisas com clareza. Se isso mexer com você de alguma forma, eu adoraria ouvir o que tem a dizer.</p>
       <p>✉️ <a href="mailto:insteadofwar@yahoo.com">insteadofwar@yahoo.com</a></p>
     `
   }
