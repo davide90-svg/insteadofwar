@@ -46,6 +46,10 @@ header {
   letter-spacing: 1px;
   transition: all 0.3s;
   font-size: 0.85rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav-btn:hover { border-color: var(--white); }
 .nav-btn.primary {
@@ -68,6 +72,7 @@ select {
   font-size: 0.9rem;
   outline: none;
   transition: border 0.3s;
+  min-height: 44px;
 }
 select:hover { border-color: var(--muted); }
 .brand-container { text-align: center; margin-bottom: 40px; }
@@ -98,10 +103,38 @@ select:hover { border-color: var(--muted); }
 }
 .footer-back {
   margin-top: 24px;
-  display: inline-block;
+  display: inline-flex;
 }
-@media (max-width: 720px) {
-  .wrap { padding-top: 24px; }
+@media (max-width: 768px) {
+  .wrap { padding: 24px 16px 60px; }
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+  .top-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    order: 2;
+  }
+  #langSelect {
+    width: 100%;
+    order: 1;
+  }
+  .nav-btn,
+  .footer-back {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .brand {
+    line-height: 0.9;
+    letter-spacing: -2px;
+  }
   .about-content p { font-size: 1rem; }
 }
 </style>
@@ -135,23 +168,13 @@ select:hover { border-color: var(--muted); }
     <a class="nav-btn footer-back" href="./index.html" id="t-back-home">← BACK HOME</a>
   </section>
 </main>
-
 <script>
 let currentLang = (() => {
-  try {
-    return localStorage.getItem('lang') || 'en';
-  } catch (e) {
-    return 'en';
-  }
+  try { return localStorage.getItem('lang') || 'en'; } catch (e) { return 'en'; }
 })();
-
 const aboutI18n = {
   en: {
-    navRep: '📰 REPORTS',
-    navGet: '🤝 GET INVOLVED',
-    sub: 'ABOUT THE PROJECT',
-    back: '← BACK HOME',
-    title: 'ABOUT',
+    navHome: '← HOME', navRep: '📰 REPORTS', navGet: '🤝 GET INVOLVED', sub: 'ABOUT THE PROJECT', back: '← BACK HOME', title: 'ABOUT',
     body: `
       <p>My name is Davide Parisi. I'm not an academic, nor an activist by profession. I'm someone who has spent years working inside systems I fundamentally disagree with, thinking about what kind of world we're actually building — and what we're choosing not to build.</p>
       <p>This project was born from a simple conviction: every human being has an unalienable right to dignity. Not dignity as an abstract concept, but as something concrete — a decent home, guaranteed food, access to quality education, and healthcare. These aren't privileges. They're the baseline of what it means to be human.</p>
@@ -161,11 +184,7 @@ const aboutI18n = {
     `
   },
   es: {
-    navRep: '📰 REPORTAJES',
-    navGet: '🤝 PARTICIPA',
-    sub: 'SOBRE EL PROYECTO',
-    back: '← VOLVER AL INICIO',
-    title: 'SOBRE EL PROYECTO',
+    navHome: '← INICIO', navRep: '📰 INFORMES', navGet: '🤝 PARTICIPA', sub: 'SOBRE EL PROYECTO', back: '← VOLVER AL INICIO', title: 'SOBRE EL PROYECTO',
     body: `
       <p>Me llamo Davide Parisi. No soy académico, ni activista de profesión. Soy alguien que ha pasado años trabajando dentro de sistemas con los que discrepo profundamente, reflexionando sobre el tipo de mundo que estamos construyendo de verdad, y el que estamos eligiendo no construir.</p>
       <p>Este proyecto nace de una convicción muy sencilla: todo ser humano tiene un derecho inalienable a la dignidad. No a una dignidad entendida como un concepto abstracto, sino como una realidad tangible: un hogar en condiciones, comida garantizada, acceso a una educación de calidad y atención médica. No son privilegios. Son la base misma de lo que significa ser humano.</p>
@@ -175,11 +194,7 @@ const aboutI18n = {
     `
   },
   it: {
-    navRep: '📰 REPORT',
-    navGet: '🤝 PARTECIPA',
-    sub: 'SUL PROGETTO',
-    back: '← TORNA ALLA HOME',
-    title: 'CHI SIAMO',
+    navHome: '← HOME', navRep: '📰 REPORT', navGet: '🤝 PARTECIPA', sub: 'SUL PROGETTO', back: '← TORNA ALLA HOME', title: 'CHI SIAMO',
     body: `
       <p>Mi chiamo Davide Parisi. Non sono un accademico, né un attivista di professione. Sono una persona che ha trascorso anni a lavorare all'interno di sistemi che non condivide affatto, riflettendo su che tipo di mondo stiamo realmente costruendo — e su cosa, invece, stiamo scegliendo di non costruire.</p>
       <p>Questo progetto nasce da una semplice convinzione: ogni essere umano ha un diritto inalienabile alla dignità. Non la dignità come concetto astratto, ma come qualcosa di concreto: una casa dignitosa, cibo garantito, accesso a un'istruzione di qualità e alle cure mediche. Questi non sono privilegi. Sono le basi stesse di ciò che significa essere umani.</p>
@@ -189,11 +204,7 @@ const aboutI18n = {
     `
   },
   fr: {
-    navRep: '📰 RAPPORTS',
-    navGet: '🤝 PARTICIPER',
-    sub: 'À PROPOS DU PROJET',
-    back: '← RETOUR À L’ACCUEIL',
-    title: 'À PROPOS',
+    navHome: '← ACCUEIL', navRep: '📰 RAPPORTS', navGet: '🤝 PARTICIPER', sub: 'À PROPOS DU PROJET', back: '← RETOUR À L’ACCUEIL', title: 'À PROPOS',
     body: `
       <p>Je m'appelle Davide Parisi. Je ne suis ni universitaire, ni militant de profession. Je suis quelqu'un qui a passé des années à travailler au cœur de systèmes avec lesquels je suis fondamentalement en désaccord, tout en réfléchissant au monde que nous sommes en train de bâtir — et à celui que nous choisissons d'ignorer.</p>
       <p>Ce projet est né d'une conviction simple : tout être humain a un droit inaliénable à la dignité. Pas une dignité abstraite, mais une réalité concrète : un logement décent, de la nourriture garantie, l'accès à une éducation de qualité et à des soins de santé. Ce ne sont pas des privilèges. C'est le fondement même de la condition humaine.</p>
@@ -203,11 +214,7 @@ const aboutI18n = {
     `
   },
   de: {
-    navRep: '📰 BERICHTE',
-    navGet: '🤝 MITMACHEN',
-    sub: 'ÜBER DAS PROJEKT',
-    back: '← ZURÜCK ZUR STARTSEITE',
-    title: 'ÜBER DAS PROJEKT',
+    navHome: '← STARTSEITE', navRep: '📰 BERICHTE', navGet: '🤝 MITMACHEN', sub: 'ÜBER DAS PROJEKT', back: '← ZURÜCK ZUR STARTSEITE', title: 'ÜBER DAS PROJEKT',
     body: `
       <p>Mein Name ist Davide Parisi. Ich bin weder Akademiker noch von Beruf Aktivist. Ich bin jemand, der jahrelang in Systemen gearbeitet hat, die er im Grunde ablehnt, und der darüber nachgedacht hat, was für eine Welt wir eigentlich aufbauen – und worauf wir uns entscheiden, zu verzichten.</p>
       <p>Dieses Projekt entstand aus einer einfachen Überzeugung: Jeder Mensch hat ein unveräußerliches Recht auf Würde. Keine Würde als abstraktes Konzept, sondern als etwas Handfestes – ein anständiges Zuhause, garantierte Ernährung, Zugang zu hochwertiger Bildung und Gesundheitsversorgung. Das sind keine Privilegien. Sie sind das Fundament des Menschseins.</p>
@@ -217,11 +224,7 @@ const aboutI18n = {
     `
   },
   pt: {
-    navRep: '📰 RELATÓRIOS',
-    navGet: '🤝 PARTICIPAR',
-    sub: 'SOBRE O PROJETO',
-    back: '← VOLTAR AO INÍCIO',
-    title: 'SOBRE O PROJETO',
+    navHome: '← INÍCIO', navRep: '📰 RELATÓRIOS', navGet: '🤝 PARTICIPAR', sub: 'SOBRE O PROJETO', back: '← VOLTAR AO INÍCIO', title: 'SOBRE O PROJETO',
     body: `
       <p>Meu nome é Davide Parisi. Não sou acadêmico, nem ativista de profissão. Sou alguém que passou anos trabalhando dentro de sistemas com os quais discordo profundamente, pensando sobre o tipo de mundo que estamos realmente construindo — e o que estamos escolhendo não construir.</p>
       <p>Este projeto nasceu de uma convicção simples: todo ser humano tem um direito inalienável à dignidade. Não a dignidade como um conceito abstrato, mas como algo concreto: uma moradia decente, alimentação garantida, acesso à educação de qualidade e saúde. Isso não é um privilégio. É a base do que significa ser humano.</p>
@@ -231,18 +234,15 @@ const aboutI18n = {
     `
   }
 };
-
 function persistLang() {
-  try {
-    localStorage.setItem('lang', currentLang);
-  } catch (e) {}
+  try { localStorage.setItem('lang', currentLang); } catch (e) {}
 }
-
 function updateAboutPage() {
   const lang = aboutI18n[currentLang] ? currentLang : 'en';
   const t = aboutI18n[lang];
   document.documentElement.lang = lang;
   document.getElementById('langSelect').value = lang;
+  document.getElementById('t-nav-home').innerText = t.navHome;
   document.getElementById('t-nav-rep').innerText = t.navRep;
   document.getElementById('t-nav-get').innerText = t.navGet;
   document.getElementById('t-subtitle').innerText = t.sub;
@@ -250,13 +250,11 @@ function updateAboutPage() {
   document.getElementById('about-title').innerText = t.title;
   document.getElementById('about-content').innerHTML = t.body;
 }
-
 document.getElementById('langSelect').addEventListener('change', (e) => {
   currentLang = e.target.value;
   persistLang();
   updateAboutPage();
 });
-
 persistLang();
 updateAboutPage();
 </script>
